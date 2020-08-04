@@ -33,18 +33,11 @@ export default function Post({ post, morePosts, preview }) {
                 </title>
                 <meta property="og:image" content={post.coverimage.url} />
               </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverimage}
-                date={post.date}
-                author={post.author}
-              />
+              <PostHeader title={post.title} coverImage={post.coverimage} date={post.date} author={post.author} />
               <PostBody content={post.content} />
             </article>
             <SectionSeparator />
-            {morePosts && morePosts.length > 0 && (
-              <MoreStories posts={morePosts} />
-            )}
+            {morePosts && morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}
       </Container>
