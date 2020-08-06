@@ -18,7 +18,7 @@ export default function Page({ page, preview }) {
 
   return (
     <Layout preview={preview} metadata={metadata}>
-      {router.isFallback ? <div>Loading…</div> : <>meta_title: {meta_title}</>}
+      {router.isFallback ? <div>Loading…</div> : <>Page content here</>}
     </Layout>
   )
 }
