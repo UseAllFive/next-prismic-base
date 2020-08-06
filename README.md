@@ -7,7 +7,7 @@
 
 ### Create a new GitHub repo based off this generator
 
-[Use this Template](/generate)
+[Use this Template](https://github.com/UseAllFive/next-prismic-base/generate)
 
 ## Configuration
 
