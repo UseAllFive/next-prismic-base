@@ -1,0 +1,34 @@
+{
+  "Main": {
+    "slug": {
+      "type": "Text",
+      "config": {
+        "label": "slug",
+        "placeholder": "/example/path/",
+        "useAsTitle": true
+      }
+    }
+  },
+  "Meta": {
+    "meta_title": {
+      "type": "Text",
+      "config": {
+        "label": "meta title"
+      }
+    },
+    "meta_description": {
+      "type": "Text",
+      "config": {
+        "label": "meta description"
+      }
+    },
+    "meta_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "meta image"
+      }
+    }
+  }
+}
