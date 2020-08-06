@@ -9,11 +9,10 @@ export default function Page({ page, preview }) {
     return <ErrorPage statusCode={404} />
   }
 
-  const { meta_title, meta_description, meta_image } = page
   const metadata = {
-    meta_title,
-    meta_description,
-    meta_image,
+    meta_title: page?.meta_title,
+    meta_description: page?.meta_description,
+    meta_image: page?.meta_image,
   }
 
   return (

@@ -1,7 +1,10 @@
 import Head from 'next/head'
-import { DEFAULT_OG_IMAGE_URL, DEFAULT_META_TITLE, DEFAULT_META_DESCRIPTION } from '../lib/constants'
+import { DEFAULT_OG_IMAGE_URL, DEFAULT_META_TITLE, DEFAULT_META_DESCRIPTION, TWITTER_HANDLE } from '../lib/constants'
 
 export default function Meta({ metadata }) {
+  const title = metadata?.meta_title || DEFAULT_META_TITLE
+  const description = metadata?.meta_description || DEFAULT_META_DESCRIPTION
+  const image = metadata?.meta_image?.url || DEFAULT_OG_IMAGE_URL
   return (
     <Head>
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
@@ -14,9 +17,14 @@ export default function Meta({ metadata }) {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={metadata?.meta_description || DEFAULT_META_DESCRIPTION} />
-      <meta property="og:image" content={metadata?.meta_image?.url || DEFAULT_OG_IMAGE_URL} />
-      <title>{metadata?.meta_title || DEFAULT_META_TITLE}</title>
+      <meta name="description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content={TWITTER_HANDLE} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      <title>{title}</title>
     </Head>
   )
 }
