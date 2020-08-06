@@ -3,13 +3,13 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Meta from '../components/meta'
 
-export default function Layout({ preview, children }) {
+export default function Layout({ metadata, preview, children }) {
   return (
     <>
-      <Meta />
+      <Meta metadata={metadata} />
+      {preview && <PreviewBar />}
       <Header />
       <div>
-        {preview && <PreviewBar />}
         <main>{children}</main>
       </div>
       <Footer />

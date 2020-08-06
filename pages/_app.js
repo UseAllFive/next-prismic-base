@@ -1,3 +1,4 @@
+import 'normalize.css'
 import '../styles/index.css'
 import { ThemeProvider } from 'styled-components'
 import theme from '../styles/theme'

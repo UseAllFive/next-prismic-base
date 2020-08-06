@@ -9,7 +9,18 @@ export default function Page({ page, preview }) {
     return <ErrorPage statusCode={404} />
   }
 
-  return <Layout preview={preview}>{router.isFallback ? <div>Loading…</div> : <>{page.meta_title}</>}</Layout>
+  const { meta_title, meta_description, meta_image } = page
+  const metadata = {
+    meta_title,
+    meta_description,
+    meta_image,
+  }
+
+  return (
+    <Layout preview={preview} metadata={metadata}>
+      {router.isFallback ? <div>Loading…</div> : <>meta_title: {meta_title}</>}
+    </Layout>
+  )
 }
 
 export async function getStaticProps({ params, preview = false, previewData }) {

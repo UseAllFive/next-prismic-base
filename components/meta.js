@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { DEFAULT_OG_IMAGE_URL } from '../lib/constants'
+import { DEFAULT_OG_IMAGE_URL, DEFAULT_META_TITLE, DEFAULT_META_DESCRIPTION } from '../lib/constants'
 
-export default function Meta() {
+export default function Meta({ metadata }) {
   return (
     <Head>
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
@@ -14,8 +14,9 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={`A statically generated blog example using Next.js and Prismic.`} />
-      <meta property="og:image" content={DEFAULT_OG_IMAGE_URL} />
+      <meta name="description" content={metadata?.meta_description || DEFAULT_META_DESCRIPTION} />
+      <meta property="og:image" content={metadata?.meta_image?.url || DEFAULT_OG_IMAGE_URL} />
+      <title>{metadata?.meta_title || DEFAULT_META_TITLE}</title>
     </Head>
   )
 }
