@@ -2,6 +2,7 @@ import PreviewBar from './preview-bar'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import Meta from '../components/meta'
+import { motion } from 'framer-motion'
 
 export default function Layout({ metadata, preview, children }) {
   return (
@@ -9,9 +10,9 @@ export default function Layout({ metadata, preview, children }) {
       <Meta metadata={metadata} />
       {preview && <PreviewBar />}
       <Header />
-      <div>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
         <main>{children}</main>
-      </div>
+      </motion.div>
       <Footer />
     </>
   )

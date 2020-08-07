@@ -31,6 +31,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
       preview,
       page: data?.node ?? null,
     },
+    revalidate: 1,
   }
 }
 
