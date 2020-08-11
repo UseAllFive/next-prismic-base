@@ -4,8 +4,41 @@
       "type": "Text",
       "config": {
         "label": "slug",
-        "placeholder": "/example/path/",
+        "placeholder": "must have a beginning and trailing slash: /example/path/",
         "useAsTitle": true
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "text": [
+            {
+              "name": "test",
+              "display": "test"
+            }
+          ]
+        },
+        "choices": {
+          "text": {
+            "type": "Slice",
+            "fieldset": "text",
+            "description": "example",
+            "icon": "ac_unit",
+            "display": "list",
+            "non-repeat": {
+              "copy": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                  "label": "copy"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
       }
     }
   },
