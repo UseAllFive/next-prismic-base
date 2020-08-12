@@ -1,3 +1,5 @@
+// An index.js file is required for deploying w/ vercel
+
 import ErrorPage from 'next/error'
 import Layout from '../components/layout'
 import Slices from '../components/slices'
