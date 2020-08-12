@@ -26,7 +26,6 @@ export default function Page({ page, preview }) {
 export async function getStaticProps({ params, preview = false, previewData }) {
   const slug = params.slug?.length ? `/${params.slug.join('/')}/` : '/'
   const data = await getPageBySlug(slug, previewData)
-  console.log(slug, data)
 
   return {
     props: {
