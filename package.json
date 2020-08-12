@@ -17,7 +17,9 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-global-grid": "^1.4.1",
+    "react-slick": "^0.27.6",
     "rebass": "^4.0.7",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1"
   }
 }

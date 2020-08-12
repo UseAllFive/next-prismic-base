@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Layout from '../components/layout'
+import Slices from '../components/slices'
 import { getAllPagesWithSlug, getPageBySlug } from '../lib/api'
 
 export default function Page({ page, preview }) {
@@ -17,7 +18,7 @@ export default function Page({ page, preview }) {
 
   return (
     <Layout preview={preview} metadata={metadata}>
-      {router.isFallback ? <div>Loading…</div> : <>Page content here</>}
+      {router.isFallback ? <div>Loading…</div> : <Slices slices={page?.body} />}
     </Layout>
   )
 }
