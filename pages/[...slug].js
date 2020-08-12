@@ -38,9 +38,11 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
 export async function getStaticPaths() {
   const allPages = await getAllPagesWithSlug()
-  const paths = allPages?.map(({ node }) => ({
-    params: { slug: node.slug.split('/').filter((path) => path !== '') },
-  }))
+  const paths = allPages
+    ?.filter(({ node }) => node.slug !== 'slug')
+    .map(({ node }) => ({
+      params: { slug: node.slug.split('/').filter((path) => path !== '') },
+    }))
 
   return {
     paths,
