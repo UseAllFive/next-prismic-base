@@ -17,15 +17,16 @@ First, [create an account on Prismic](https://prismic.io/).
 
 After creating an account, create a **repository** from the [dashboard](https://prismic.io/dashboard/) and assign to it any name of your liking.
 
-### Step 2. Create a `page` type
+### Step 2. Create a `page` and `header` type
 
-From the repository page, create a new **custom type**:
+From the repository page, create two new **custom types**:
 
-- The name should be `page`.
+- `page` (repeatable)
+- `header` (single)
 
-Copy the JSON in [`types/page.json`](types/page.json), then click on **JSON editor** and paste it there.
+Copy the JSON in [`types/page.json`](types/page.json) and `types/header.json`](types/header.json), then click on **JSON editor** and paste it there.
 
-Save the type and continue.
+Save the types and continue.
 
 ### Step 4. Populate Content
 
@@ -34,6 +35,8 @@ Go to the **Content** page, it's in the menu at the top left, then click on **Cr
 - You just need **1 page document**.
 - Use dummy data for the metadata.
 - Make sure to specify a slug. It should include a starting and trailing slash (e.g. `/example/post/`)
+
+Do the same for the header content type
 
 **Important:** For each document, you need to click **Publish** after saving. If not, the document will be in the draft state.
 
@@ -52,6 +55,7 @@ Then set each variable on `.env.local`:
 - `PRISMIC_API_TOKEN` should be the **Permanent access token** you just created
 - `PRISMIC_REPOSITORY_NAME` is the name of your repository (the one in the URL)
 - `PRISMIC_REPOSITORY_LOCALE` is the locale of your repository. Defaults to `en-us`
+- `PRISMIC_HEADER_ID` is the Prismic ID for the header content type that you create
 
 Your `.env.local` file should look like this:
 
@@ -59,6 +63,7 @@ Your `.env.local` file should look like this:
 PRISMIC_API_TOKEN=...
 PRISMIC_REPOSITORY_NAME=...
 PRISMIC_REPOSITORY_LOCALE=...
+PRISMIC_HEADER_ID=...
 ```
 
 Make sure the locale matches your settings in the Prismic dashboard.

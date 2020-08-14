@@ -1,14 +1,5 @@
 import { PrismicClient } from '../../lib/api'
-
-function linkResolver(doc) {
-  // Pretty URLs for known types
-  if (doc.type === 'page') {
-    return doc?.data?.slug
-  }
-
-  // Fallback for other types, in case new custom types get created
-  return `/${doc?.uid}`
-}
+import linkResolver from '../../lib/resolvers'
 
 export default async function preview(req, res) {
   const { token: ref, documentId } = req.query

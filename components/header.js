@@ -1,11 +1,17 @@
-import Link from 'next/link'
+import PrismicLink from './prismic-link'
 
-export default function Header() {
+export default function Header({ header }) {
   return (
     <header>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
+      <ul>
+        {header.links.map(({ link, link_text }, i) => {
+          return (
+            <li key={i}>
+              <PrismicLink link={link} link_text={link_text} />
+            </li>
+          )
+        })}
+      </ul>
     </header>
   )
 }

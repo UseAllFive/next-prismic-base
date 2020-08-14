@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import Slices from '../components/slices'
 import { getPageBySlug } from '../lib/api'
 
-export default function Page({ page, preview }) {
+export default function Page({ page, header, preview }) {
   if (!page?._meta?.id) {
     return <ErrorPage statusCode={404} />
   }
@@ -17,19 +17,20 @@ export default function Page({ page, preview }) {
   }
 
   return (
-    <Layout preview={preview} metadata={metadata}>
+    <Layout preview={preview} metadata={metadata} header={header}>
       <Slices slices={page?.body} />
     </Layout>
   )
 }
 
 export async function getStaticProps({ preview = false, previewData }) {
-  const data = await getPageBySlug('/', previewData)
+  const { page, header } = await getPageBySlug('/', previewData)
 
   return {
     props: {
       preview,
-      page: data?.node ?? null,
+      page: page?.node ?? null,
+      header: header?.node ?? null,
     },
     revalidate: 1,
   }

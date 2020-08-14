@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Slices from '../components/slices'
 import { getAllPagesWithSlug, getPageBySlug } from '../lib/api'
 
-export default function Page({ page, preview }) {
+export default function Page({ page, header, preview }) {
   const router = useRouter()
   if (!router.isFallback && !page?._meta?.id) {
     return <ErrorPage statusCode={404} />
@@ -17,7 +17,7 @@ export default function Page({ page, preview }) {
   }
 
   return (
-    <Layout preview={preview} metadata={metadata}>
+    <Layout preview={preview} metadata={metadata} header={header}>
       {router.isFallback ? <div>Loading…</div> : <Slices slices={page?.body} />}
     </Layout>
   )
@@ -25,12 +25,13 @@ export default function Page({ page, preview }) {
 
 export async function getStaticProps({ params, preview = false, previewData }) {
   const slug = params.slug?.length ? `/${params.slug.join('/')}/` : '/'
-  const data = await getPageBySlug(slug, previewData)
+  const { page, header } = await getPageBySlug(slug, previewData)
 
   return {
     props: {
       preview,
-      page: data?.node ?? null,
+      page: page?.node ?? null,
+      header: header?.node ?? null,
     },
     revalidate: 1,
   }
