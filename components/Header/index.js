@@ -1,4 +1,4 @@
-import PrismicLink from './prismic-link'
+import PrismicLink from '../PrismicLink'
 
 export default function Header({ header }) {
   return (

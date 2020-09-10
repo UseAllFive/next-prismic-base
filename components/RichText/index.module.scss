@@ -1,0 +1,7 @@
+@import 'shared';
+
+.container {
+  h1 {
+    @include title;
+  }
+}

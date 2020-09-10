@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { linkResolver, hrefResolver } from '../lib/resolvers'
+import { linkResolver, hrefResolver } from '../../lib/resolvers'
 
 export default function PrismicLink({ link, link_text }) {
   return (

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
-import Layout from '../components/layout'
-import Slices from '../components/slices'
+import Layout from '../components/Layout'
+import Slices from '../components/Slices'
 import { getAllPagesWithSlug, getPageBySlug } from '../lib/api'
 
 export default function Page({ page, header, preview }) {

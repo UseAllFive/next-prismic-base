@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { DEFAULT_OG_IMAGE_URL, DEFAULT_META_TITLE, DEFAULT_META_DESCRIPTION, TWITTER_HANDLE } from '../lib/constants'
+import { DEFAULT_OG_IMAGE_URL, DEFAULT_META_TITLE, DEFAULT_META_DESCRIPTION, TWITTER_HANDLE } from '../../lib/constants'
 
 export default function Meta({ metadata }) {
   const title = metadata?.meta_title || DEFAULT_META_TITLE

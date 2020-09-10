@@ -1,10 +1,6 @@
 import 'normalize.css'
 import 'nprogress/nprogress.css'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import '../styles/index.css'
-import { ThemeProvider } from 'styled-components'
-import theme from '../styles/theme'
+import '../styles/global.scss'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import { AnimatePresence } from 'framer-motion'
@@ -14,11 +10,9 @@ function MyApp({ Component, pageProps, router }) {
   Router.events.on('routeChangeComplete', () => NProgress.done())
   Router.events.on('routeChangeError', () => NProgress.done())
   return (
-    <ThemeProvider theme={theme}>
-      <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.asPath} />
-      </AnimatePresence>
-    </ThemeProvider>
+    <AnimatePresence exitBeforeEnter>
+      <Component {...pageProps} key={router.asPath} />
+    </AnimatePresence>
   )
 }
 

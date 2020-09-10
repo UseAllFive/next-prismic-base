@@ -1,7 +1,7 @@
-import PreviewBar from './preview-bar'
-import Footer from '../components/footer'
-import Header from '../components/header'
-import Meta from '../components/meta'
+import PreviewBar from '../PreviewBar'
+import Footer from '../Footer'
+import Header from '../Header'
+import Meta from '../Meta'
 import { motion } from 'framer-motion'
 
 export default function Layout({ metadata, header, preview, children }) {

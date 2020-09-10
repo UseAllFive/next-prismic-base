@@ -1,0 +1,7 @@
+@import './typography';
+
+@mixin breakpoint($minimum) {
+  @media (min-width: $minimum) {
+    @content;
+  }
+}

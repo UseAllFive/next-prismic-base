@@ -1,0 +1,15 @@
+@import 'slick';
+@import 'slick-theme';
+
+@import 'fonts';
+@import 'shared';
+
+/* Add sensible global styles here */
+
+:global {
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+}

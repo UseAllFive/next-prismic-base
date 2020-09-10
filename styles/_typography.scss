@@ -1,0 +1,51 @@
+$breakpoints: (
+  tablet: $tablet,
+  laptop: $laptop,
+);
+
+$default-title-size: (
+  mobile: 20px,
+  tablet: 40px,
+  laptop: 60px,
+);
+
+$default-title-height: (
+  mobile: 1,
+  tablet: 1,
+  desktop: 1,
+);
+
+$default-title-spacing: (
+  mobile: normal,
+  tablet: normal,
+  desktop: normal,
+);
+
+$default-title-weight: 400;
+
+@mixin title(
+  $font: $primary,
+  $size: $default-title-size,
+  $height: $default-title-height,
+  $weight: $default-title-weight,
+  $spacing: $default-title-spacing
+) {
+  $sizes: map-merge($default-title-size, $size);
+  $heights: map-merge($default-title-height, $height);
+  $spacings: map-merge($default-title-spacing, $spacing);
+
+  font-weight: $weight;
+  font-family: $font;
+
+  font-size: map-get($sizes, mobile);
+  line-height: map-get($heights, mobile);
+  letter-spacing: map-get($spacings, mobile);
+
+  @each $key, $breakpoint in $breakpoints {
+    @include breakpoint($breakpoint) {
+      font-size: map-get($sizes, $key);
+      line-height: map-get($heights, $key);
+      letter-spacing: map-get($spacings, $key);
+    }
+  }
+}

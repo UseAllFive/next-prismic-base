@@ -1,5 +1,5 @@
-import RichText from './richtext'
-import Carousel from './carousel'
+import RichText from '../RichText'
+import Carousel from '../Carousel'
 
 export default function Slices({ slices }) {
   return (

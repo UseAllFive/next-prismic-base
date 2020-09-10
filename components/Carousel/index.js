@@ -1,5 +1,5 @@
 import Slider from 'react-slick'
-import { Image } from 'rebass/styled-components'
+import styles from './index.module.scss'
 
 export default function Carousel({ items }) {
   const settings = {
@@ -10,7 +10,7 @@ export default function Carousel({ items }) {
       {items.map(({ image }, i) => {
         return (
           <div key={i}>
-            <Image width={1} src={image.url} alt={image.alt} />
+            <img className={styles.image} src={image.url} alt={image.alt} />
           </div>
         )
       })}

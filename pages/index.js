@@ -1,8 +1,8 @@
 // An index.js file is required for deploying w/ vercel
 
 import ErrorPage from 'next/error'
-import Layout from '../components/layout'
-import Slices from '../components/slices'
+import Layout from '../components/Layout'
+import Slices from '../components/Slices'
 import { getPageBySlug } from '../lib/api'
 
 export default function Page({ page, header, preview }) {
