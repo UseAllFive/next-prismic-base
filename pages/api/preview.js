@@ -1,5 +1,5 @@
 import { PrismicClient } from '../../lib/api'
-import linkResolver from '../../lib/resolvers'
+import { linkResolver } from '../../lib/resolvers'
 
 export default async function preview(req, res) {
   const { token: ref, documentId } = req.query
