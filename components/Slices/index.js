@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types'
 import RichText from '../RichText'
 import Carousel from '../Carousel'
 
-export default function Slices({ slices }) {
+const Slices = ({ slices }) => {
   return (
     <>
       {slices.map((slice, i) => {
@@ -24,3 +25,9 @@ export default function Slices({ slices }) {
     </>
   )
 }
+
+Slices.propTypes = {
+  slices: PropTypes.array.isRequired,
+}
+
+export default Slices

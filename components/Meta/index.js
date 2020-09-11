@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { DEFAULT_OG_IMAGE_URL, DEFAULT_META_TITLE, DEFAULT_META_DESCRIPTION, TWITTER_HANDLE } from '../../lib/constants'
+import META_SHAPE from './shape'
 
-export default function Meta({ metadata }) {
+const Meta = ({ metadata }) => {
   const title = metadata?.meta_title || DEFAULT_META_TITLE
   const description = metadata?.meta_description || DEFAULT_META_DESCRIPTION
   const image = metadata?.meta_image?.url || DEFAULT_OG_IMAGE_URL
@@ -28,3 +29,9 @@ export default function Meta({ metadata }) {
     </Head>
   )
 }
+
+Meta.propTypes = {
+  metadata: META_SHAPE,
+}
+
+export default Meta

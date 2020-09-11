@@ -1,6 +1,5 @@
-import PropTypes from 'prop-types'
 import PrismicLink from '../PrismicLink'
-import PRISMIC_LINK_SHAPE from 'shapes/prismic/link'
+import HEADER_SHAPE from './shape'
 
 const Header = ({ header }) => {
   return (
@@ -19,14 +18,7 @@ const Header = ({ header }) => {
 }
 
 Header.propTypes = {
-  header: PropTypes.shape({
-    links: PropTypes.arrayOf(
-      PropTypes.shape({
-        link: PRISMIC_LINK_SHAPE,
-        link_text: PropTypes.string,
-      })
-    ),
-  }),
+  header: HEADER_SHAPE,
 }
 
 export default Header

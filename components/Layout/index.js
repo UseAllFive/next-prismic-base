@@ -1,10 +1,13 @@
+import PropTypes from 'prop-types'
 import PreviewBar from '../PreviewBar'
 import Footer from '../Footer'
 import Header from '../Header'
 import Meta from '../Meta'
 import { motion } from 'framer-motion'
+import HEADER_SHAPE from 'components/Header/shape'
+import META_SHAPE from 'components/Meta/shape'
 
-export default function Layout({ metadata, header, preview, children }) {
+const Layout = ({ metadata, header, preview, children }) => {
   return (
     <>
       <Meta metadata={metadata} />
@@ -17,3 +20,12 @@ export default function Layout({ metadata, header, preview, children }) {
     </>
   )
 }
+
+Layout.propTypes = {
+  metadata: META_SHAPE,
+  header: HEADER_SHAPE,
+  preview: PropTypes.bool,
+  children: PropTypes.node,
+}
+
+export default Layout

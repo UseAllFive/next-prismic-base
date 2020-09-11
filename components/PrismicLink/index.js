@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { linkResolver, hrefResolver } from '../../lib/resolvers'
+import PRISMIC_LINK_SHAPE from 'shapes/prismic/link'
 
-export default function PrismicLink({ link, link_text }) {
+const PrismicLink = ({ link, link_text }) => {
   return (
     <>
       {link._linkType === 'Link.document' ? (
@@ -16,3 +18,10 @@ export default function PrismicLink({ link, link_text }) {
     </>
   )
 }
+
+PrismicLink.propTypes = {
+  link: PRISMIC_LINK_SHAPE.isRequired,
+  link_text: PropTypes.string.isRequired,
+}
+
+export default PrismicLink
