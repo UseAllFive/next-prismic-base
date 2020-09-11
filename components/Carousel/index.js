@@ -1,7 +1,9 @@
 import Slider from 'react-slick'
 import styles from './index.module.scss'
+import PropTypes from 'prop-types'
+import PRISMIC_IMAGE_SHAPE from 'shapes/prismic/image'
 
-export default function Carousel({ items }) {
+const Carousel = ({ items }) => {
   const settings = {
     dots: true,
   }
@@ -17,3 +19,13 @@ export default function Carousel({ items }) {
     </Slider>
   )
 }
+
+Carousel.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PRISMIC_IMAGE_SHAPE,
+    })
+  ).isRequired,
+}
+
+export default Carousel
