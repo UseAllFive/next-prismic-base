@@ -1,27 +1,8 @@
 // An index.js file is required for deploying w/ vercel
-
-import ErrorPage from 'next/error'
-import Layout from '../components/Layout'
-import Slices from '../components/Slices'
 import { getPageBySlug } from '../lib/api'
+import Page from 'components/Page'
 
-export default function Page({ page, header, preview }) {
-  if (!page?._meta?.id) {
-    return <ErrorPage statusCode={404} />
-  }
-
-  const metadata = {
-    meta_title: page?.meta_title,
-    meta_description: page?.meta_description,
-    meta_image: page?.meta_image,
-  }
-
-  return (
-    <Layout preview={preview} metadata={metadata} header={header}>
-      <Slices slices={page?.body} />
-    </Layout>
-  )
-}
+export default Page
 
 export async function getStaticProps({ preview = false, previewData }) {
   const { page, header } = await getPageBySlug('/', previewData)
