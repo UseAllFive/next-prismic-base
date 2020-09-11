@@ -20,7 +20,7 @@ const Page = ({ page, header, preview }) => {
 
   return (
     <Layout preview={preview} metadata={metadata} header={header}>
-      <Slices slices={page?.body} />
+      {page?.body && <Slices slices={page?.body} />}
     </Layout>
   )
 }
