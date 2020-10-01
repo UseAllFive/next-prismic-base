@@ -18,9 +18,9 @@ function MyApp({ Component, pageProps, router }) {
 }
 
 MyApp.propTypes = {
-  Component: PropTypes.node,
+  Component: PropTypes.any,
   pageProps: PropTypes.object,
-  router: PropTypes.any
+  router: PropTypes.any,
 }
 
 export default MyApp
