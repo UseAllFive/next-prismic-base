@@ -37,8 +37,8 @@ $default-title-weight: 400;
   font-family: $font;
   font-size: map-get($sizes, mobile);
   font-weight: $weight;
-  line-height: map-get($heights, mobile);
   letter-spacing: map-get($spacings, mobile);
+  line-height: map-get($heights, mobile);
 
   @each $key, $breakpoint in $breakpoints {
     @include breakpoint($breakpoint) {
