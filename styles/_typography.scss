@@ -34,18 +34,17 @@ $default-title-weight: 400;
   $heights: map-merge($default-title-height, $height);
   $spacings: map-merge($default-title-spacing, $spacing);
 
-  font-weight: $weight;
   font-family: $font;
-
   font-size: map-get($sizes, mobile);
-  line-height: map-get($heights, mobile);
+  font-weight: $weight;
   letter-spacing: map-get($spacings, mobile);
+  line-height: map-get($heights, mobile);
 
   @each $key, $breakpoint in $breakpoints {
     @include breakpoint($breakpoint) {
       font-size: map-get($sizes, $key);
-      line-height: map-get($heights, $key);
       letter-spacing: map-get($spacings, $key);
+      line-height: map-get($heights, $key);
     }
   }
 }

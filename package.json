@@ -25,5 +25,8 @@
     "react-slick": "^0.27.11",
     "sass": "^1.26.10",
     "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "sass-lint": "^1.13.1"
   }
 }
