@@ -7,12 +7,17 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint:js": "eslint components/** pages/** lib/** shapes/**",
+    "lint:sass": "sass-lint 'components/**/*.module.scss, styles/*.scss' -v",
+    "lint": "yarn lint:js && yarn lint:sass",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "classnames": "^2.2.6",
     "css-grid-guides": "^3.0.0",
-    "framer-motion": "^2.6.10",
+    "framer-motion": "^2.7.7",
+    "husky": "^5.0.0-alpha.6",
     "next": "9.5.3",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
@@ -23,10 +28,14 @@
     "react-dom": "^16.13.1",
     "react-global-grid": "^1.4.1",
     "react-slick": "^0.27.11",
-    "sass": "^1.26.10",
+    "sass": "^1.26.11",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-react": "^7.21.2",
     "sass-lint": "^1.13.1"
   }
 }

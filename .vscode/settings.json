@@ -17,5 +17,6 @@
     "titleBar.inactiveForeground": "#e7e7e799"
   },
   "peacock.color": "#000",
-  "sasslint.packageManager": "yarn"
+  "sasslint.packageManager": "yarn",
+  "eslint.packageManager": "yarn"
 }

@@ -1,6 +1,7 @@
 import 'normalize.css'
 import 'nprogress/nprogress.css'
 import '../styles/global.scss'
+import PropTypes from 'prop-types'
 import NProgress from 'nprogress'
 import Router from 'next/router'
 import { AnimatePresence } from 'framer-motion'
@@ -14,6 +15,12 @@ function MyApp({ Component, pageProps, router }) {
       <Component {...pageProps} key={router.asPath} />
     </AnimatePresence>
   )
+}
+
+MyApp.propTypes = {
+  Component: PropTypes.node,
+  pageProps: PropTypes.object,
+  router: PropTypes.any
 }
 
 export default MyApp

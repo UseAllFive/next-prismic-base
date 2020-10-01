@@ -10,7 +10,11 @@ const Grid = ({ children, guides }) => {
   useEffect(() => {
     gg()
   }, [guides])
-  return <div className={classNames({ [styles.grid]: true, grid: guides })}>{children}</div>
+  return (
+    <div className={classNames({ [styles.grid]: true, grid: guides })}>
+      {children}
+    </div>
+  )
 }
 
 Grid.propTypes = {

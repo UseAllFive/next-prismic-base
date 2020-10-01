@@ -13,9 +13,11 @@ const Page = ({ page, header, preview }) => {
   }
 
   const metadata = {
+    /* eslint-disable react/prop-types */
     meta_title: page?.meta_title,
     meta_description: page?.meta_description,
     meta_image: page?.meta_image,
+    /* eslint-enable */
   }
 
   return (
@@ -29,10 +31,10 @@ Page.propTypes = {
   page: PropTypes.shape({
     body: PropTypes.array,
     slug: PropTypes.string,
+    ...META_PROPS,
     _meta: PropTypes.shape({
       id: PropTypes.string,
     }),
-    ...META_PROPS,
   }),
   header: HEADER_SHAPE,
   preview: PropTypes.bool,

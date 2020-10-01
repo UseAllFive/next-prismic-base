@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { RichText } from 'prismic-reactjs'
 import styles from './index.module.scss'
 import PRISMIC_RICHTEXT_SHAPE from 'shapes/prismic/richtext'
