@@ -12,10 +12,11 @@ const Carousel = ({ items }) => {
       {items.map(({ image }, i) => {
         return (
           <div key={i}>
-            <img 
-              className={styles.image} 
-              src={image.url} 
-              alt={image.alt || ''} />
+            <img
+              className={styles.image}
+              src={image.url}
+              alt={image.alt || ''}
+            />
           </div>
         )
       })}
