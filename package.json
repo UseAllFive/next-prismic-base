@@ -17,6 +17,7 @@
     "classnames": "^2.2.6",
     "css-grid-guides": "^3.0.0",
     "framer-motion": "^2.7.7",
+    "graphql-query-compress": "^1.2.4",
     "husky": "^5.0.0-alpha.6",
     "next": "9.5.3",
     "normalize.css": "^8.0.1",
