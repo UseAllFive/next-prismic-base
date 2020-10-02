@@ -4,6 +4,7 @@
   "engines": {
     "node": "12.18.3"
   },
+  "license": "MIT",
   "scripts": {
     "dev": "next",
     "build": "next build",
