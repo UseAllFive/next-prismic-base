@@ -10,15 +10,17 @@
     "start": "next start",
     "lint:js": "eslint components/** pages/** lib/** shapes/**",
     "lint:sass": "sass-lint 'components/**/*.module.scss, styles/*.scss' -v",
-    "lint": "yarn lint:js && yarn lint:sass",
-    "postinstall": "husky install"
+    "lint": "yarn lint:js && yarn lint:sass"
+  },
+  "husky": {
+    "pre-commit": "yarn lint"
   },
   "dependencies": {
     "classnames": "^2.2.6",
     "css-grid-guides": "^3.0.0",
     "framer-motion": "^2.7.7",
     "graphql-query-compress": "^1.2.4",
-    "husky": "^5.0.0-alpha.6",
+    "husky": "^4.3.0",
     "next": "9.5.3",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",

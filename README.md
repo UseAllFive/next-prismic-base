@@ -1,7 +1,15 @@
 # A statically generated website starter kit using Next.js and Prismic CMS
 
+It's highly suggested that you read through the Next and Prismic documentation below before starting a project if you are not familiar with these services:
+
 - [Next.js](https://nextjs.org/)
 - [Prismic](https://prismic.io/)
+
+## Table of contents
+
+- How to use
+- UA5 conventions
+  - Branch naming
 
 ## How to use
 
@@ -11,13 +19,15 @@
 
 ## Configuration
 
-### Step 1. Create an account and a repository on Prismic
+### Prismic
+
+#### Create an account and a repository
 
 First, [create an account on Prismic](https://prismic.io/).
 
 After creating an account, create a **repository** from the [dashboard](https://prismic.io/dashboard/) and assign to it any name of your liking.
 
-### Step 2. Create a `page` and `header` type
+#### Create a `page` and `header` type
 
 From the repository page, create two new **custom types**:
 
@@ -28,7 +38,7 @@ Copy the JSON in [`types/page.json`](types/page.json) and `types/header.json`](t
 
 Save the types and continue.
 
-### Step 4. Populate Content
+#### Populate Content
 
 Go to the **Content** page, it's in the menu at the top left, then click on **Create new** and select the **page** type:
 
@@ -40,7 +50,25 @@ Do the same for the header content type
 
 **Important:** For each document, you need to click **Publish** after saving. If not, the document will be in the draft state.
 
-### Step 5. Set up environment variables
+#### Set up Preview
+
+On your repository page, go to **Settings**, click on **Previews** and then **Create a New Preview** for development, fill the form like so:
+
+- **Site Name**: may be anything, like `development`
+- **Domain of Your Application**: `http://localhost:3000`
+- **Link Resolver**: `/api/preview`
+
+Once saved, go to one of the posts you've created and:
+
+- **Update the meta_title**. For example, you can add `[Draft]` in front of the meta_title.
+- Click **Save**, but **DO NOT** click **Publish**. By doing this, the post will be in draft state.
+- Right next to the **Publish** button you should see the **Preview** button, displayed with an eye icon. Click on it!
+
+You should now be able to see the updated title. To exit preview mode, you can click on **Click here to exit preview mode** at the top of the page.
+
+### Next
+
+#### Set up environment variables
 
 Follow the instructions in [this post](https://intercom.help/prismicio/en/articles/1036153-generating-an-access-token) to generate a new access token.
 
@@ -68,32 +96,16 @@ PRISMIC_HEADER_ID=...
 
 Make sure the locale matches your settings in the Prismic dashboard.
 
-### Step 6. Run Next.js in development mode
+#### Install deps, run development server
 
 ```bash
-npm install
-npm run dev
-
-# or
-
 yarn install
 yarn dev
 ```
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+Your site should be up and running on [http://localhost:3000](http://localhost:3000)!
 
-### Step 7. Try preview mode
+#### Google Analytics
 
-On your repository page, go to **Settings**, click on **Previews** and then **Create a New Preview** for development, fill the form like so:
-
-- **Site Name**: may be anything, like `development`
-- **Domain of Your Application**: `http://localhost:3000`
-- **Link Resolver**: `/api/preview`
-
-Once saved, go to one of the posts you've created and:
-
-- **Update the meta_title**. For example, you can add `[Draft]` in front of the meta_title.
-- Click **Save**, but **DO NOT** click **Publish**. By doing this, the post will be in draft state.
-- Right next to the **Publish** button you should see the **Preview** button, displayed with an eye icon. Click on it!
-
-You should now be able to see the updated title. To exit preview mode, you can click on **Click here to exit preview mode** at the top of the page.
+- Go into `/lib/analytics.js` and update the `GA_TRACKING_ID`
+- Make sure the environment variable `NODE_ENV` is set to `production` on the production server (no tracking happening in development by default)
