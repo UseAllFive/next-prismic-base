@@ -1,16 +1,11 @@
 import Head from 'next/head'
-import {
-  DEFAULT_OG_IMAGE_URL,
-  DEFAULT_META_TITLE,
-  DEFAULT_META_DESCRIPTION,
-  TWITTER_HANDLE,
-} from '../../lib/constants'
+import { metaDefaults } from '../../lib/constants'
 import META_SHAPE from './shape'
 
 const Meta = ({ metadata }) => {
-  const title = metadata?.meta_title || DEFAULT_META_TITLE
-  const description = metadata?.meta_description || DEFAULT_META_DESCRIPTION
-  const image = metadata?.meta_image?.url || DEFAULT_OG_IMAGE_URL
+  const title = metadata?.meta_title || metaDefaults.TITLE
+  const description = metadata?.meta_description || metaDefaults.DESCRIPTION
+  const image = metadata?.meta_image?.url || metaDefaults.IMAGE
   return (
     <Head>
       <link
@@ -44,7 +39,7 @@ const Meta = ({ metadata }) => {
       <meta name="description" content={description} />
       <meta property="og:image" content={image} />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content={TWITTER_HANDLE} />
+      <meta name="twitter:site" content={metaDefaults.TWITTER_HANDLE} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
