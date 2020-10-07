@@ -2727,10 +2727,10 @@ eslint-config-prettier@^6.12.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-plugin-react@^7.21.2:
-  version "7.21.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.21.2.tgz#3bd5d2c4c36d5a0428d0d6dda301ac9a84d681b2"
-  integrity sha512-j3XKvrK3rpBzveKFbgAeGsWb9uz6iUOrR0jixRfjwdFeGSRsXvVTFtHDQYCjsd1/6Z/xvb8Vy3LiI5Reo7fDrg==
+eslint-plugin-react@^7.21.3:
+  version "7.21.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.21.3.tgz#71655d2af5155b19285ec929dd2cdc67a4470b52"
+  integrity sha512-OI4GwTCqyIb4ipaOEGLWdaOHCXZZydStAsBEPB2e1ZfNM37bojpgO1BoOQbFb0eLVz3QLDx7b+6kYcrxCuJfhw==
   dependencies:
     array-includes "^3.1.1"
     array.prototype.flatmap "^1.2.3"
@@ -3141,10 +3141,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@^2.7.7:
-  version "2.7.7"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-2.7.7.tgz#678e10cb9a6ba7a8a4645fc414a4ab6bc03eadd8"
-  integrity sha512-mAoU31M2XQ9Itxxxlqpac5NARuxSE/LML9rxHV7esbKwre5KIvTN34/C78gXmco5U9HHlxh4C2FiWcgmEviZnw==
+framer-motion@^2.7.8:
+  version "2.7.8"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-2.7.8.tgz#3bc607200642b4a331df1d5e44eec8e2f4a0dcaf"
+  integrity sha512-PKfkSlpN1i7XTYNMuU5X/efgtBUoSc1APM0n4VDl+5wX+Ch5sPVyQP4wNyQKZM4sJL8Eb/HPLH0CE7KcAgKwqg==
   dependencies:
     framesync "^4.1.0"
     hey-listen "^1.0.8"
@@ -4915,10 +4915,10 @@ prismic-javascript@3.0.2:
   dependencies:
     cross-fetch "^3.0.5"
 
-prismic-reactjs@1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/prismic-reactjs/-/prismic-reactjs-1.3.2.tgz#ec7ab535c11b4cc86cb724f52b1f9de23c0dcac9"
-  integrity sha512-xPZU4bXZ+XQql493XFm/9via7F2tScRlbjfpcRAjROq+RKPR0RAJN5jGGSHXudsT4HJ+WuApe+TKhGSj5Mn4bQ==
+prismic-reactjs@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/prismic-reactjs/-/prismic-reactjs-1.3.3.tgz#1d49b016a85ac0baca3999e37dff44a7c70a4059"
+  integrity sha512-Phg+T22oc8fUWx9eysDBM8cTmqzWCacL6Hd86AoqzP/MJIheGbF7gHOqgLUeeJsWRavMpfUgmD/0T9GXSu9WjA==
   dependencies:
     prismic-helpers "^1.0.3"
     prismic-richtext "^1.0.3"
