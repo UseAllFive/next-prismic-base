@@ -11,9 +11,9 @@ const Carousel = ({ items }) => {
     <Slider {...settings}>
       {items.map(({ image }, i) => {
         return (
-          <div key={i}>
+          <div className={styles.carousel__slide} key={i}>
             <img
-              className={styles.image}
+              className={styles.carousel__slide__image}
               src={image.url}
               alt={image.alt || ''}
             />

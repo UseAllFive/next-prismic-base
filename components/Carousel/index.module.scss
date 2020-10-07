@@ -1,6 +1,12 @@
 // TODO: update carousel styles to match your design
-.image {
-  height: 500px;
-  object-fit: contain;
-  width: 100%;
+.carousel {
+  &__slide {
+    height: 500px;
+
+    &__image {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+    }
+  }
 }
