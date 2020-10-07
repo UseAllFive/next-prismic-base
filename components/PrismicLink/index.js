@@ -5,14 +5,15 @@ import { linkResolver, hrefResolver } from '../../lib/resolvers'
 import PRISMIC_LINK_SHAPE from 'shapes/prismic/link'
 
 const PrismicLink = ({ link, link_text }) => {
+  const { _linkType, url, target } = link
   return (
     <React.Fragment>
-      {link._linkType === 'Link.document' ? (
+      {_linkType === 'Link.document' ? (
         <Link href={hrefResolver(link)} as={linkResolver(link)}>
           <a>{link_text}</a>
         </Link>
       ) : (
-        <a href={link.url} target={link.target}>
+        <a href={url} target={target} rel={target === '_blank' && 'noopener'}>
           {link_text}
         </a>
       )}

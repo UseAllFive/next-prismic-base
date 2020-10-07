@@ -1,8 +1,14 @@
 import Head from 'next/head'
-import { metaDefaults } from '../../lib/constants'
 import META_SHAPE from './shape'
 
 const Meta = ({ metadata }) => {
+  // TODO: update default metadata
+  const metaDefaults = {
+    TWITTER_HANDLE: '{@twitterHandle}',
+    TITLE: '{Default Title}',
+    DESCRIPTION: '{Default description}',
+    IMAGE: '{path_to_share_image.jpg}',
+  }
   const title = metadata?.meta_title || metaDefaults.TITLE
   const description = metadata?.meta_description || metaDefaults.DESCRIPTION
   const image = metadata?.meta_image?.url || metaDefaults.IMAGE

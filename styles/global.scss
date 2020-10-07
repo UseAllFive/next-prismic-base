@@ -4,12 +4,17 @@
 @import 'fonts';
 @import 'shared';
 
-// Add sensible global styles here
+// TODO: add sensible global styles
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
-:global {
-  *,
-  *::after,
-  *::before {
-    box-sizing: border-box;
-  }
+.slick-slider {
+  visibility: hidden;
+}
+
+.slick-initialized {
+  visibility: visible;
 }

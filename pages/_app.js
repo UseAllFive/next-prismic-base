@@ -17,6 +17,7 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 function MyApp({ Component, pageProps, router }) {
   return (
+    // to remove page transitions, remove AnimatePresence wrapper and motion.div in Layout component
     <AnimatePresence exitBeforeEnter>
       <Component {...pageProps} key={router.asPath} />
     </AnimatePresence>
