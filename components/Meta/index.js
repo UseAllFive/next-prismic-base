@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import META_SHAPE from './shape'
+import metaShape from './shape'
 
 const Meta = ({ metadata }) => {
   // TODO: update default metadata
@@ -55,7 +55,7 @@ const Meta = ({ metadata }) => {
 }
 
 Meta.propTypes = {
-  metadata: META_SHAPE,
+  metadata: metaShape,
 }
 
 export default Meta

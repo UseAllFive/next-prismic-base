@@ -1,47 +1,45 @@
-$breakpoints: (
-  tablet: $tablet,
-  laptop: $laptop,
+@use 'variables' as v;
+@use 'mixins' as m;
+
+$_default-title-size: (
+  sm: 20px,
+  md: 40px,
+  lg: 60px,
 );
 
-$default-title-size: (
-  mobile: 20px,
-  tablet: 40px,
-  laptop: 60px,
+$_default-title-height: (
+  sm: 1,
+  md: 1,
+  lg: 1,
 );
 
-$default-title-height: (
-  mobile: 1,
-  tablet: 1,
-  desktop: 1,
+$_default-title-spacing: (
+  sm: normal,
+  md: normal,
+  lg: normal,
 );
 
-$default-title-spacing: (
-  mobile: normal,
-  tablet: normal,
-  desktop: normal,
-);
-
-$default-title-weight: 400;
+$_default-title-weight: 400;
 
 @mixin title(
-  $font: $primary,
-  $size: $default-title-size,
-  $height: $default-title-height,
-  $weight: $default-title-weight,
-  $spacing: $default-title-spacing
+  $font: v.$primary,
+  $size: $_default-title-size,
+  $height: $_default-title-height,
+  $weight: $_default-title-weight,
+  $spacing: $_default-title-spacing
 ) {
-  $sizes: map-merge($default-title-size, $size);
-  $heights: map-merge($default-title-height, $height);
-  $spacings: map-merge($default-title-spacing, $spacing);
+  $sizes: map-merge($_default-title-size, $size);
+  $heights: map-merge($_default-title-height, $height);
+  $spacings: map-merge($_default-title-spacing, $spacing);
 
   font-family: $font;
-  font-size: map-get($sizes, mobile);
+  font-size: map-get($sizes, sm);
   font-weight: $weight;
-  letter-spacing: map-get($spacings, mobile);
-  line-height: map-get($heights, mobile);
+  letter-spacing: map-get($spacings, sm);
+  line-height: map-get($heights, sm);
 
-  @each $key, $breakpoint in $breakpoints {
-    @include breakpoint($breakpoint) {
+  @each $key, $breakpoint in v.$breakpoints {
+    @include m.breakpoint($breakpoint) {
       font-size: map-get($sizes, $key);
       letter-spacing: map-get($spacings, $key);
       line-height: map-get($heights, $key);

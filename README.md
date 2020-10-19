@@ -83,7 +83,7 @@ Then set each variable on `.env.local`:
 - `PRISMIC_API_TOKEN` should be the **Permanent access token** you just created
 - `PRISMIC_REPOSITORY_NAME` is the name of your repository (the one in the URL)
 - `PRISMIC_REPOSITORY_LOCALE` is the locale of your repository. Defaults to `en-us`
-- `PRISMIC_HEADER_ID` is the Prismic ID for the header content type that you create
+- `PRISMIC_HOME_ID` is the Prismic ID for the index page
 
 Your `.env.local` file should look like this:
 
@@ -91,7 +91,7 @@ Your `.env.local` file should look like this:
 PRISMIC_API_TOKEN=...
 PRISMIC_REPOSITORY_NAME=...
 PRISMIC_REPOSITORY_LOCALE=...
-PRISMIC_HEADER_ID=...
+PRISMIC_HOME_ID=...
 ```
 
 Make sure the locale matches your settings in the Prismic dashboard.

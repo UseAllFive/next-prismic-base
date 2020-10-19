@@ -1,20 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import { linkResolver, hrefResolver } from '../../lib/resolvers'
-import PRISMIC_LINK_SHAPE from 'shapes/prismic/link'
+import { linkResolver, hrefResolver } from 'lib/resolvers'
+import prismicLinkShape from 'shapes/prismic/link'
 
-const PrismicLink = ({ link, link_text }) => {
-  const { _linkType, url, target } = link
+const PrismicLink = ({ className, link, children }) => {
+  const { link_type, url, target } = link
+  const rel = target === '_blank' ? 'noreferrer' : null
   return (
     <React.Fragment>
-      {_linkType === 'Link.document' ? (
+      {link_type === 'Document' ? (
         <Link href={hrefResolver(link)} as={linkResolver(link)}>
-          <a>{link_text}</a>
+          <a className={className}>{children}</a>
         </Link>
       ) : (
-        <a href={url} target={target} rel={target === '_blank' && 'noopener'}>
-          {link_text}
+        <a className={className} href={url} target={target} rel={rel}>
+          {children}
         </a>
       )}
     </React.Fragment>
@@ -22,8 +23,9 @@ const PrismicLink = ({ link, link_text }) => {
 }
 
 PrismicLink.propTypes = {
-  link: PRISMIC_LINK_SHAPE.isRequired,
-  link_text: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  link: prismicLinkShape.isRequired,
+  children: PropTypes.node,
 }
 
 export default PrismicLink

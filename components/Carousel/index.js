@@ -1,7 +1,7 @@
 import Slider from 'react-slick'
 import styles from './index.module.scss'
 import PropTypes from 'prop-types'
-import PRISMIC_IMAGE_SHAPE from 'shapes/prismic/image'
+import prismicImageShare from 'shapes/prismic/image'
 
 const Carousel = ({ items }) => {
   const settings = {
@@ -27,7 +27,7 @@ const Carousel = ({ items }) => {
 Carousel.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      image: PRISMIC_IMAGE_SHAPE,
+      image: prismicImageShare,
     })
   ).isRequired,
 }

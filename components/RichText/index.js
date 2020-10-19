@@ -1,6 +1,6 @@
 import { RichText } from 'prismic-reactjs'
 import styles from './index.module.scss'
-import PRISMIC_RICHTEXT_SHAPE from 'shapes/prismic/richtext'
+import prismicRichTextShare from 'shapes/prismic/richtext'
 
 const RichTextComponent = ({ richtext }) => {
   return (
@@ -11,7 +11,7 @@ const RichTextComponent = ({ richtext }) => {
 }
 
 RichTextComponent.propTypes = {
-  richtext: PRISMIC_RICHTEXT_SHAPE,
+  richtext: prismicRichTextShare,
 }
 
 export default RichTextComponent

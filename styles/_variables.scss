@@ -7,7 +7,25 @@ $prismic-purple: #5163ba;
 // BREAKPOINTS
 $tablet: 768px;
 $laptop: 1024px;
+$md: $tablet;
+$lg: $laptop;
+$breakpoints: (
+  md: $md,
+  lg: $lg,
+);
 
 // TYPE
 $primary: 'Times New Roman', serif;
 $alt: 'Arial', sans-serif;
+
+// SPACING
+$grid-gap: 8px;
+$grid-gap-md: 16px;
+$max-width: 1376px;
+$gutter: $grid-gap * 2;
+$gutter-md: $grid-gap-md * 2;
+$slice-pad: 40px;
+$slice-pad-md: 80px;
+
+// Z-INDEX
+$z-top: 8888;

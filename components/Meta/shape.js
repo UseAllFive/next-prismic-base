@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
-import PRISMIC_IMAGE_SHAPE from 'shapes/prismic/image'
+import prismicImageShare from 'shapes/prismic/image'
 
-const META_PROPS = {
+const metaProps = {
   meta_title: PropTypes.string,
   meta_description: PropTypes.string,
-  meta_image: PRISMIC_IMAGE_SHAPE,
+  meta_image: prismicImageShare,
 }
 
-export { META_PROPS }
+export { metaProps }
 
-const META_SHAPE = PropTypes.shape(META_PROPS)
+const metaShape = PropTypes.shape(metaProps)
 
-export default META_SHAPE
+export default metaShape

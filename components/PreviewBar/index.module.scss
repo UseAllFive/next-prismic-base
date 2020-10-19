@@ -1,9 +1,9 @@
-@import 'shared';
+@use 'variables' as v;
 
 .bar {
   align-items: center;
-  background: $prismic-purple;
-  color: $white;
+  background: v.$prismic-purple;
+  color: v.$white;
   justify-content: center;
   padding: 5px 20px;
 

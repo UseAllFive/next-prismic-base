@@ -1,7 +1,7 @@
-@import 'shared';
+@use 'typography' as t;
 
 .container {
   h1 {
-    @include title;
+    @include t.title;
   }
 }

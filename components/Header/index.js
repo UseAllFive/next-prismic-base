@@ -1,5 +1,5 @@
 import PrismicLink from '../PrismicLink'
-import HEADER_SHAPE from './shape'
+import headerShape from './shape'
 
 const Header = ({ header }) => {
   return (
@@ -8,7 +8,7 @@ const Header = ({ header }) => {
         {header?.links.map(({ link, link_text }, i) => {
           return (
             <li key={i}>
-              <PrismicLink link={link} link_text={link_text} />
+              <PrismicLink link={link}>{link_text}</PrismicLink>
             </li>
           )
         })}
@@ -18,7 +18,7 @@ const Header = ({ header }) => {
 }
 
 Header.propTypes = {
-  header: HEADER_SHAPE,
+  header: headerShape,
 }
 
 export default Header

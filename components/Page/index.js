@@ -2,13 +2,13 @@ import PropTypes from 'prop-types'
 import ErrorPage from 'next/error'
 import Layout from 'components/Layout'
 import Slices from 'components/Slices'
-import HEADER_SHAPE from 'components/Header/shape'
-import { META_PROPS } from 'components/Meta/shape'
+import headerShape from 'components/Header/shape'
 import { useRouter } from 'next/router'
+import pageShape from './shape'
 
 const Page = ({ page, header, preview }) => {
   const router = useRouter()
-  if (!router.isFallback && !page?._meta?.id) {
+  if (!router.isFallback && !page?.id) {
     return <ErrorPage statusCode={404} />
   }
 
@@ -20,23 +20,18 @@ const Page = ({ page, header, preview }) => {
     /* eslint-enable */
   }
 
+  const { body } = page?.data
+
   return (
     <Layout preview={preview} metadata={metadata} header={header}>
-      {page?.body && <Slices slices={page?.body} />}
+      {body && <Slices slices={body} />}
     </Layout>
   )
 }
 
 Page.propTypes = {
-  page: PropTypes.shape({
-    body: PropTypes.array,
-    slug: PropTypes.string,
-    ...META_PROPS,
-    _meta: PropTypes.shape({
-      id: PropTypes.string,
-    }),
-  }),
-  header: HEADER_SHAPE,
+  page: pageShape,
+  header: headerShape,
   preview: PropTypes.bool,
 }
 

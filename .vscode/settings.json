@@ -1,5 +1,4 @@
 {
   "editor.formatOnSave": true,
-  "sasslint.packageManager": "yarn",
   "eslint.packageManager": "yarn"
 }

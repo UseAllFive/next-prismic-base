@@ -1,7 +1,57 @@
-@import './typography';
+@use 'variables' as v;
 
 @mixin breakpoint($minimum) {
   @media (min-width: $minimum) {
     @content;
+  }
+}
+
+// Centered container with a max-width and gutters on both sides
+@mixin container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: v.$max-width + 2 * v.$gutter;
+  padding-left: v.$gutter;
+  padding-right: v.$gutter;
+
+  @include breakpoint(v.$md) {
+    max-width: v.$max-width + 2 * v.$gutter-md;
+    padding-left: v.$gutter-md;
+    padding-right: v.$gutter-md;
+  }
+}
+
+@mixin slice {
+  padding-bottom: v.$slice-pad;
+  padding-top: v.$slice-pad;
+
+  @include breakpoint(v.$md) {
+    padding-bottom: v.$slice-pad-md;
+    padding-top: v.$slice-pad-md;
+  }
+}
+
+@mixin remove-list-formatting {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin button-reset {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  width: auto;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
   }
 }

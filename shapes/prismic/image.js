@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const PRISMIC_IMAGE_SHAPE = PropTypes.shape({
+const prismicImageShare = PropTypes.shape({
   dimensions: PropTypes.shape({
     width: PropTypes.number,
     height: PropTypes.number,
@@ -10,4 +10,4 @@ const PRISMIC_IMAGE_SHAPE = PropTypes.shape({
   alt: PropTypes.string,
 })
 
-export default PRISMIC_IMAGE_SHAPE
+export default prismicImageShare
