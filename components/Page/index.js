@@ -20,11 +20,9 @@ const Page = ({ page, header, preview }) => {
     /* eslint-enable */
   }
 
-  const { body } = page?.data
-
   return (
     <Layout preview={preview} metadata={metadata} header={header}>
-      {body && <Slices slices={body} />}
+      {page?.data?.body && <Slices slices={page?.data?.body} />}
     </Layout>
   )
 }
