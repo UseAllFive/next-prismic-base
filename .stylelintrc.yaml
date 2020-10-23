@@ -4,3 +4,10 @@ extends:
 rules:
   max-nesting-depth: 10
   declaration-colon-newline-after: null
+  at-rule-empty-line-before: null
+  block-closing-brace-newline-after:
+    - always
+    - ignoreAtRules:
+        - if
+        - else
+  selector-class-pattern: null
