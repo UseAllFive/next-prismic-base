@@ -11,3 +11,4 @@ rules:
         - if
         - else
   selector-class-pattern: null
+  selector-max-id: 1

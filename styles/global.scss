@@ -1,9 +1,60 @@
-@import 'slick';
-@import 'slick-theme';
+@use 'variables' as v;
+@use 'mixins' as m;
 
-// TODO: add sensible global styles
+html {
+  font-family: v.$font-primary;
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  width: auto;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+#nprogress {
+  .bar {
+    background-color: v.$true-black;
+  }
+
+  .spinner-icon {
+    border-left-color: v.$true-black;
+    border-top-color: v.$true-black;
+  }
 }

@@ -1,7 +1,9 @@
 import Slider from 'react-slick'
-import styles from './index.module.scss'
 import PropTypes from 'prop-types'
 import prismicImageShare from 'shapes/prismic/image'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import styles from './index.module.scss'
 
 const Carousel = ({ items }) => {
   const settings = {

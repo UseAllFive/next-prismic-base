@@ -7,16 +7,18 @@ $prismic-purple: #5163ba;
 // BREAKPOINTS
 $tablet: 768px;
 $laptop: 1024px;
+$desktop: 1440px;
 $md: $tablet;
 $lg: $laptop;
+$xl: $desktop;
 $breakpoints: (
   md: $md,
   lg: $lg,
+  xl: $xl,
 );
 
 // TYPE
-$primary: 'Times New Roman', serif;
-$alt: 'Arial', sans-serif;
+$font-primary: sans-serif;
 
 // SPACING
 $grid-gap: 8px;
