@@ -16,6 +16,17 @@ html {
   outline: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -62,4 +73,18 @@ button {
     border-left-color: v.$true-black;
     border-top-color: v.$true-black;
   }
+}
+
+p {
+  margin: 0;
+
+  + p {
+    margin-top: 1em;
+  }
+}
+
+img,
+svg {
+  max-height: 100%;
+  max-width: 100%;
 }

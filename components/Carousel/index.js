@@ -1,23 +1,24 @@
+import Image from 'next/image'
 import Slider from 'react-slick'
 import PropTypes from 'prop-types'
 import prismicImageShare from 'shapes/prismic/image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import styles from './index.module.scss'
 
 const Carousel = ({ items }) => {
   const settings = {
-    dots: true,
+    arrows: false,
   }
   return (
     <Slider {...settings}>
       {items.map(({ image }, i) => {
         return (
-          <div className={styles.carousel__slide} key={i}>
-            <img
-              className={styles.carousel__slide__image}
+          <div key={i}>
+            <Image
               src={image.url}
-              alt={image.alt || ''}
+              width={image.dimensions.width}
+              height={image.dimensions.height}
+              alt={image.alt}
             />
           </div>
         )
