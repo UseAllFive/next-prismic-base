@@ -6,7 +6,7 @@ const prismicImageShare = PropTypes.shape({
     height: PropTypes.number,
   }),
   copyright: PropTypes.string,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   alt: PropTypes.string,
 })
 
