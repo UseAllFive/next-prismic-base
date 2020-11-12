@@ -1,5 +1,5 @@
 import 'normalize.css'
-import 'nprogress/nprogress.css'
+import '../styles/nprogress.scss'
 import '../styles/global.scss'
 import PropTypes from 'prop-types'
 import NProgress from 'nprogress'
