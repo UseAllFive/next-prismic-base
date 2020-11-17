@@ -5,6 +5,10 @@ It's highly suggested that you read through the Next and Prismic documentation b
 - [Next.js](https://nextjs.org/)
 - [Prismic](https://prismic.io/)
 
+## Already connected to Prismic?
+
+If you have not yet connected this codebase to Prismic [carefully read through the instructions here](https://github.com/UseAllFive/next-prismic-base/wiki). Otherwise, you can probably skip those instructions and simply read the following to get the project up and running locally:
+
 ## Configuration
 
 ### Set up environment variables
