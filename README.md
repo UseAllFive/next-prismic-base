@@ -1,3 +1,7 @@
+![](https://img.shields.io/badge/node-12.19.0-43853d?logo=node.js&labelColor=fff)
+![](https://img.shields.io/badge/next-10.0.1-black?logo=next.js)
+![](https://img.shields.io/badge/prismic-cms-fff?logo=prismic&labelColor=5163ba&logoColor=fff)
+
 # YOUR_PROJECTS_NAME_HERE
 
 It's highly suggested that you read through the Next and Prismic documentation below before starting
