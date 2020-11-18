@@ -17,37 +17,29 @@ If you have not yet connected this codebase to Prismic [carefully read through t
 
 ### Set up environment variables
 
-Follow the instructions in [this post](https://intercom.help/prismicio/en/articles/1036153-generating-an-access-token) to generate a new access token.
-
-Next, copy the `.env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
-
-```bash
-cp .env.local.example .env.local
-```
-
-Then set each variable on `.env.local`:
-
-- `PRISMIC_API_TOKEN` should be the **Permanent access token** you just created
-- `PRISMIC_REPOSITORY_NAME` is the name of your repository (the one in the URL)
-- `PRISMIC_REPOSITORY_LOCALE` is the locale of your repository. Defaults to `en-us`
-- `PRISMIC_HEADER_ID` is the Prismic ID for the header content type that you create
-
-Your `.env.local` file should look something like this:
-
-```bash
-PRISMIC_API_TOKEN=...
-PRISMIC_REPOSITORY_NAME=...
-PRISMIC_REPOSITORY_LOCALE=...
-PRISMIC_HEADER_ID=...
-```
-
-Make sure the locale matches your settings in the Prismic dashboard.
+Get a copy of the `.env.local` file from a UA5 colleague and add the file to the project root. Make sure that file is sent and received securely since this document will contain sensitive information that needs to remain hidden.
 
 ### Install deps, run development server
 
+You may run into issues if you're using a different node version than the one specified in the `.nvmrc` file. For this reason, it is recommended that you install that version with [nvm (node version manager)](https://github.com/nvm-sh/nvm).
+
+```
+nvm use
+```
+
+This project uses the [yarn package manager](https://yarnpkg.com/). To begin development, run the following commands, which will install dependencies and run the development server.
+
 ```bash
-yarn install
+yarn
 yarn dev
 ```
 
 Your site should be up and running on [http://localhost:3000](http://localhost:3000)!
+
+## Managing data
+
+The CMS for this site is [hosted on Prismic](https://prismic.io).
+
+## Deploying
+
+This site is [hosted on vercel](https://vercel.com/). The `master` branch is associated with production. When `master` is pushed, the latest code will deploy to production automatically. For this reason, do not work directly off of the `master` branch. Only merge your code into `master` when you are ready to take the changes live.
