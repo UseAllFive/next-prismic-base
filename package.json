@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8080",
     "lint:js": "eslint components/** pages/** lib/** shapes/**",
     "lint:scss": "npx stylelint '**/*.scss'",
     "lint": "yarn lint:js && yarn lint:scss"
