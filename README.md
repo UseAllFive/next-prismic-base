@@ -1,5 +1,5 @@
 ![](https://img.shields.io/badge/node-12.19.1-43853d?logo=node.js&labelColor=fff)
-![](https://img.shields.io/badge/next-10.0.2-black?logo=next.js)
+![](https://img.shields.io/badge/next-10.0.3-black?logo=next.js)
 ![](https://img.shields.io/badge/prismic-cms-fff?logo=prismic&labelColor=5163ba&logoColor=fff)
 
 # YOUR_PROJECTS_NAME_HERE
