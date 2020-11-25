@@ -1,13 +1,17 @@
 @use 'variables' as v;
 
 .bar {
-  align-items: center;
   background: v.$prismic-purple;
+  bottom: 0;
   color: v.$white;
-  justify-content: center;
+  left: 0;
   padding: 5px 20px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
 
   a {
     color: currentColor;
+    display: inline-block;
   }
 }

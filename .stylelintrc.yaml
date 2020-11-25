@@ -12,3 +12,5 @@ rules:
         - else
   selector-class-pattern: null
   selector-max-id: 1
+  no-descending-specificity: null
+  selector-type-no-unknown: null
