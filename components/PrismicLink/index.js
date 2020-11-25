@@ -9,6 +9,7 @@ import styles from './index.module.scss'
 
 const PrismicLink = ({ className, activeClassName, link, children }) => {
   const { link_type, url, target } = link
+
   const DocumentLink = () => {
     const { asPath } = useRouter()
     const asPathWithSlash = `${asPath}/`
@@ -41,11 +42,11 @@ const PrismicLink = ({ className, activeClassName, link, children }) => {
     return <span className={className}>{children}</span>
   }
   return (
-    <React.Fragment>
+    <>
       {link_type === 'Document' && <DocumentLink />}
       {link_type === 'Web' && <RegularLink />}
-      {link_type === 'Any' && <NoLink />}
-    </React.Fragment>
+      {(link_type === 'Any' || !link_type) && <NoLink />}
+    </>
   )
 }
 
