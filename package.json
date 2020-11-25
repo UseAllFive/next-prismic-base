@@ -11,7 +11,9 @@
     "start": "next start",
     "lint:js": "eslint components/** pages/** lib/** shapes/**",
     "lint:scss": "npx stylelint '**/*.scss'",
-    "lint": "yarn lint:js && yarn lint:scss"
+    "lint": "yarn lint:js && yarn lint:scss",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "husky": {
     "hooks": {
@@ -34,12 +36,22 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@storybook/addon-actions": "^6.1.6",
+    "@storybook/addon-essentials": "^6.1.6",
+    "@storybook/addon-links": "^6.1.6",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.1.6",
     "@svgr/webpack": "^5.5.0",
+    "babel-loader": "^8.2.1",
+    "css-loader": "^5.0.1",
     "eslint": "^7.14.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-react": "^7.21.5",
     "husky": "^4.3.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
     "stylelint": "^13.8.0",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-config-standard": "^20.0.0"
