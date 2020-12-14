@@ -39,7 +39,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-react": "^7.21.5",
-    "husky": "^4.3.5",
+    "husky": "^4.3.6",
     "stylelint": "^13.8.0",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-config-standard": "^20.0.0"
