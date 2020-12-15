@@ -67,6 +67,11 @@ button {
 #nprogress {
   .bar {
     background-color: v.$true-black;
+    z-index: v.$z-1;
+  }
+
+  .spinner {
+    z-index: v.$z-1;
   }
 
   .spinner-icon {

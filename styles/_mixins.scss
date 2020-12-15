@@ -55,3 +55,21 @@
     padding: 0;
   }
 }
+
+@mixin button(
+  $bg: v.$true-black,
+  $color: v.$white,
+  $hover-bg: v.$prismic-purple,
+  $hover-color: v.$white
+) {
+  background: $bg;
+  color: $color;
+  display: inline-flex;
+  padding: 8px 40px;
+  text-align: center;
+
+  &:hover {
+    background: $hover-bg;
+    color: $hover-color;
+  }
+}
