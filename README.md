@@ -1,6 +1,7 @@
 ![](https://img.shields.io/badge/node-12.19.1-43853d?logo=node.js&labelColor=fff)
 ![](https://img.shields.io/badge/next-10.0.3-black?logo=next.js)
 ![](https://img.shields.io/badge/prismic-cms-fff?logo=prismic&labelColor=5163ba&logoColor=fff)
+![](https://img.shields.io/badge/storybook-fff?logo=storybook&labelColor=ff4785&logoColor=fff)
 
 # YOUR_PROJECTS_NAME_HERE
 
@@ -39,6 +40,10 @@ Your site should be up and running on [http://localhost:3000](http://localhost:3
 ## Managing data
 
 The CMS for this site is [hosted on Prismic](https://prismic.io).
+
+## Storybook
+
+This project has been configured w/ Storybook. While developing your components, run `yarn storybook` to start Storybook locally. Each of your components should come with a `stories.js` file, which will automatically add the component to Storybook. As part of the development process, developers should be creating stories in order to test your component in different viewports and edge-case scenarios having to do with different properties passed or not passeded to your component.
 
 ## Deploying
 
