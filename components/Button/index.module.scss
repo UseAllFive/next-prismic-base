@@ -1,0 +1,5 @@
+@use 'mixins' as m;
+
+.button {
+  @include m.button;
+}
