@@ -47,7 +47,7 @@
     "babel-loader": "^8.2.2",
     "chromatic": "^5.4.0",
     "css-loader": "^5.0.1",
-    "eslint": "^7.16.0",
+    "eslint": "^7.17.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-react": "^7.21.5",
