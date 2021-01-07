@@ -24,7 +24,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "framer-motion": "^3.1.4",
-    "next": "10.0.4",
+    "next": "10.0.5",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "prismic-javascript": "3.0.2",
