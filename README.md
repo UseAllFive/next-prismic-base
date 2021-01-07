@@ -1,5 +1,5 @@
 ![](https://img.shields.io/badge/node-12.19.1-43853d?logo=node.js&labelColor=fff)
-![](https://img.shields.io/badge/next-10.0.4-black?logo=next.js)
+![](https://img.shields.io/badge/next-10.0.5-black?logo=next.js)
 ![](https://img.shields.io/badge/prismic-cms-fff?logo=prismic&labelColor=5163ba&logoColor=fff)
 ![](https://img.shields.io/badge/storybook-fff?logo=storybook&labelColor=ff4785&logoColor=fff)
 
