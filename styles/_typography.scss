@@ -1,48 +1,29 @@
-@use 'variables' as v;
+// You may ultimately want to replace this file
+// with multiple files for each type style.
+// The below is just an example of how you could
+// create a mixin called `title` that utilizes
+// the typography mixin
+
 @use 'mixins' as m;
 
-$_default-title-size: (
+$_size: (
   sm: 20px,
   md: 40px,
   lg: 60px,
 );
 
-$_default-title-height: (
+$_height: (
   sm: 1,
   md: 1,
   lg: 1,
 );
 
-$_default-title-spacing: (
+$_spacing: (
   sm: normal,
   md: normal,
   lg: normal,
 );
 
-$_default-title-weight: 400;
-
-@mixin title(
-  $font: v.$font-primary,
-  $size: $_default-title-size,
-  $height: $_default-title-height,
-  $weight: $_default-title-weight,
-  $spacing: $_default-title-spacing
-) {
-  $sizes: map-merge($_default-title-size, $size);
-  $heights: map-merge($_default-title-height, $height);
-  $spacings: map-merge($_default-title-spacing, $spacing);
-
-  font-family: $font;
-  font-size: map-get($sizes, sm);
-  font-weight: $weight;
-  letter-spacing: map-get($spacings, sm);
-  line-height: map-get($heights, sm);
-
-  @each $key, $breakpoint in v.$breakpoints {
-    @include m.breakpoint($breakpoint) {
-      font-size: map-get($sizes, $key);
-      letter-spacing: map-get($spacings, $key);
-      line-height: map-get($heights, $key);
-    }
-  }
+@mixin title() {
+  @include m.typography($size: $_size, $height: $_height, $spacing: $_spacing);
 }

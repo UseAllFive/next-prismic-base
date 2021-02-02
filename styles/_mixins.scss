@@ -73,3 +73,17 @@
     color: $hover-color;
   }
 }
+
+@mixin typography($font: v.$font-primary, $size, $height, $spacing) {
+  font-family: $font;
+  font-size: map-get($size, sm);
+  line-height: map-get($height, sm);
+
+  @each $key, $breakpoint in v.$breakpoints {
+    @include breakpoint($breakpoint) {
+      font-size: map-get($size, $key);
+      letter-spacing: map-get($spacing, $key);
+      line-height: map-get($height, $key);
+    }
+  }
+}
