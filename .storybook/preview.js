@@ -1,4 +1,6 @@
 // Styles that need to be globally accessible to components
+import { withNextRouter } from 'storybook-addon-next-router'
+import { addDecorator } from '@storybook/react'
 import 'normalize.css'
 import '../styles/global.scss'
 
@@ -66,3 +68,13 @@ Object.defineProperty(nextImage, 'default', {
     )
   },
 })
+
+// Mock router in order to work with next/link
+addDecorator(
+  withNextRouter({
+    path: '/', // defaults to `/`
+    asPath: '/', // defaults to `/`
+    query: {}, // defaults to `{}`
+    push() {}, // defaults to using addon actions integration, can override any method in the router
+  })
+)
