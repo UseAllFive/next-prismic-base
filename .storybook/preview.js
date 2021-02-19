@@ -47,13 +47,15 @@ export const parameters = {
 Object.defineProperty(nextImage, 'default', {
   configurable: true,
   value: (props) => {
-    const { width, height } = props
+    const { width, height, layout } = props
     const ratio = (height / width) * 100
     return (
       <div
         style={{
-          paddingBottom: `${ratio}%`,
-          position: 'relative',
+          paddingBottom: layout !== 'fill' && `${ratio}%`,
+          position: layout !== 'fill' ? 'relative' : 'absolute',
+          overflow: layout === 'fill' && 'hidden',
+          inset: layout === 'fill' && 0,
         }}>
         <img
           style={{
