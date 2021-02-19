@@ -6,20 +6,21 @@ import classNames from 'classnames'
 
 // global grid.
 // please adjust the css properties to customize for your project.
-const Grid = ({ children, guides }) => {
+const Grid = ({ children, guides, tag: Tag = 'div' }) => {
   useEffect(() => {
     gg()
   }, [guides])
   return (
-    <div className={classNames({ [styles.grid]: true, grid: guides })}>
+    <Tag className={classNames({ [styles.grid]: true, grid: guides })}>
       {children}
-    </div>
+    </Tag>
   )
 }
 
 Grid.propTypes = {
   children: PropTypes.node,
   guides: PropTypes.bool,
+  tag: PropTypes.string,
 }
 
 export default Grid
