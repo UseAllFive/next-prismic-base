@@ -34,8 +34,7 @@
     "react-dom": "^17.0.1",
     "react-slick": "^0.28.0",
     "sass": "^1.32.6",
-    "slick-carousel": "^1.8.1",
-    "storybook-addon-next-router": "^2.0.4"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
