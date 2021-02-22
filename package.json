@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "framer-motion": "^3.3.0",
+    "framer-motion": "^3.6.7",
     "next": "10.0.7",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
@@ -33,7 +33,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-slick": "^0.28.0",
-    "sass": "^1.32.6",
+    "sass": "^1.32.8",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
