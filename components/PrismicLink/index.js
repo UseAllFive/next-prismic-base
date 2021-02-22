@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
@@ -17,26 +17,33 @@ const PrismicLink = ({
   const { link_type, url, target } = link
 
   const DocumentLink = () => {
-    let isActive
-    const href = nextLink ? link : linkResolver(link)
-    if (useRouter()) {
-      const { asPath } = useRouter()
-      const i = asPath.indexOf('?')
-      const path = i > 0 ? `${asPath.substring(0, i)}/` : `${asPath}/`
-      isActive = path.indexOf(href) > -1
-    }
+    const [href, setHref] = useState(null)
+    const [isActive, setIsActive] = useState(false)
+    const { asPath } = useRouter()
+    const asPathWithSlash = `${asPath}/`
+
+    linkResolver(link).then((res) => {
+      setHref(res)
+      setIsActive(asPathWithSlash === href)
+    })
+
     return (
-      <Link href={href}>
-        <a
-          className={classNames(styles.link, className, {
-            [activeClassName]: isActive,
-            [styles.linkActive]: isActive,
-          })}>
-          {children}
-        </a>
-      </Link>
+      <>
+        {href && (
+          <Link href={href}>
+            <a
+              className={classNames(styles.link, className, {
+                [activeClassName]: isActive,
+                [styles.linkActive]: isActive,
+              })}>
+              {children}
+            </a>
+          </Link>
+        )}
+      </>
     )
   }
+
   const RegularLink = () => {
     return (
       <a

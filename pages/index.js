@@ -9,7 +9,7 @@ export async function getStaticProps({ preview = false, previewData }) {
   const ref = previewData?.ref || masterRef.ref
   const HOME_ID = api.HOME_ID
   const { data: header } = await PrismicClient.getSingle('header', {
-    fetchLinks: ['page.slug'],
+    fetchLinks: ['page.page_slug', 'page.parent_page'],
     ref,
   })
   const page = await PrismicClient.getByID(HOME_ID, { ref })
