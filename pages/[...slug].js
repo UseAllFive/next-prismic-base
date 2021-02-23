@@ -1,7 +1,7 @@
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from 'lib/api'
 import Page from 'components/Page'
-import { getPaths } from 'lib/pathFormation'
+import { getAllPaths } from 'lib/pathFormation'
 import { homeID, pageFetchLinks } from 'constants/page'
 import { getPageSlug } from 'lib/pageSlug'
 
@@ -61,21 +61,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 }
 
 export async function getStaticPaths() {
-  // TODO handle results exceeding 100
-  const {
-    results: allPages,
-    total_pages: totalPages,
-  } = await PrismicClient.query(
-    Prismic.Predicates.at('document.type', 'page'),
-    {
-      pageSize: 100,
-      fetchLinks: pageFetchLinks,
-    }
-  )
-
-  // Form URLs based on slug + parent pages
-  const filteredPages = allPages?.filter((page) => page?.id !== homeID) // remove home page from paths
-  const paths = await getPaths({ pageType: 'page', pages: filteredPages })
+  const paths = await getAllPaths({ pageType: 'page', excludeId: homeID })
 
   return {
     paths,
