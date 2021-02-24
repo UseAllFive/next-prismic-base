@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
@@ -17,15 +17,11 @@ const PrismicLink = ({
   const { link_type, url, target } = link
 
   const DocumentLink = () => {
-    const [href, setHref] = useState(null)
-    const [isActive, setIsActive] = useState(false)
     const { asPath } = useRouter()
     const asPathWithSlash = `${asPath}/`
 
-    linkResolver(link).then((res) => {
-      setHref(res)
-      setIsActive(asPathWithSlash === href)
-    })
+    const href = linkResolver(link)
+    const isActive = asPathWithSlash === href
 
     return (
       <>

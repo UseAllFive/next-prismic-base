@@ -6,12 +6,22 @@
         "label" : "Page Slug"
       }
     },
-    "parent_page" : {
-      "type" : "Link",
-      "config" : {
-        "select" : "document",
-        "customtypes" : [ "page" ],
-        "label" : "Parent Page"
+    "parent_pages": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "parent_page": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": [
+                "page"
+              ],
+              "label": "Parent Page"
+            }
+          }
+        },
+        "label": "Parent Pages"
       }
     },
     "body": {

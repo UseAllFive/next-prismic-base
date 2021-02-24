@@ -2,7 +2,7 @@ import Prismic from 'prismic-javascript'
 import { PrismicClient } from 'lib/api'
 import Page from 'components/Page'
 import { getAllPaths } from 'lib/pathFormation'
-import { homeID, pageFetchLinks } from 'constants/page'
+import { homeID, pageFetchLinks, pageSlugFetchlinks } from 'constants/page'
 import { getPageSlug } from 'lib/pageSlug'
 
 export default Page
@@ -20,33 +20,29 @@ export async function getStaticProps({ params, preview = false, previewData }) {
     {
       fetchLinks: pageFetchLinks,
       ref,
+      pageSize: 100, // page slug is a non-unique field
     }
   )
 
-  // Prismic only allows goes one-level deep with content relationships, so we need to perform additional look ups for nested pages
   // Go through results if there are parent pages
-  let filteredPage = null
+  let page = null
   if (results && results.length) {
     const curSlug = slugArray.join('/')
-    const resolvedPages = await Promise.all(
-      results.map(async (result) => {
-        // Determine result's full slug based on parent pages
-        const resultParentPages = await getPageSlug(result)
+    const resolvedPage = results.find((result) => {
+      // Determine result's full slug based on parent pages
+      const resultParentPages = getPageSlug(result)
 
-        // Compare the result's parent slugs to the actual url
-        const isMatch = resultParentPages.join('/') === curSlug
-        return isMatch ? result : null
-      })
-    )
+      // Compare the result's parent slugs to the actual url
+      const isMatch = resultParentPages.join('/') === curSlug
+      return isMatch ? result : null
+    })
 
-    filteredPage = resolvedPages.find((page) => page !== null)
+    page = resolvedPage
   }
-
-  const page = filteredPage
 
   // Get global layout items
   const { data: header } = await PrismicClient.getSingle('header', {
-    fetchLinks: ['page.page_slug', 'page.parent_page'],
+    fetchLinks: pageSlugFetchlinks,
     ref,
   })
 
