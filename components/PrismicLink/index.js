@@ -17,29 +17,26 @@ const PrismicLink = ({
   const { link_type, url, target } = link
 
   const DocumentLink = () => {
-    const { asPath } = useRouter()
-    const asPathWithSlash = `${asPath}/`
-
-    const href = linkResolver(link)
-    const isActive = asPathWithSlash === href
-
+    let isActive
+    const href = nextLink ? link : linkResolver(link)
+    if (useRouter()) {
+      const { asPath } = useRouter()
+      const i = asPath.indexOf('?')
+      const path = i > 0 ? `${asPath.substring(0, i)}/` : `${asPath}/`
+      isActive = path.indexOf(href) > -1
+    }
     return (
-      <>
-        {href && (
-          <Link href={href}>
-            <a
-              className={classNames(styles.link, className, {
-                [activeClassName]: isActive,
-                [styles.linkActive]: isActive,
-              })}>
-              {children}
-            </a>
-          </Link>
-        )}
-      </>
+      <Link href={href}>
+        <a
+          className={classNames(styles.link, className, {
+            [activeClassName]: isActive,
+            [styles.linkActive]: isActive,
+          })}>
+          {children}
+        </a>
+      </Link>
     )
   }
-
   const RegularLink = () => {
     return (
       <a
