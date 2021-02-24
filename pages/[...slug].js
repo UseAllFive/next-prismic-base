@@ -1,7 +1,7 @@
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from 'lib/api'
 import Page from 'components/Page'
-import { getAllPaths } from 'lib/pathFormation'
+import { getPagePaths } from 'lib/pathFormation'
 import { homeID, pageFetchLinks, pageSlugFetchlinks } from 'constants/page'
 import { getPageSlug } from 'lib/pageSlug'
 
@@ -57,7 +57,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getAllPaths({ pageType: 'page', excludeId: homeID })
+  const paths = await getPagePaths({ excludeId: homeID })
 
   return {
     paths,
