@@ -1,25 +1,50 @@
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from 'lib/api'
 import Page from 'components/Page'
+import { getPagePaths } from 'lib/pathFormation'
+import { homeID, pageFetchLinks, pageSlugFetchlinks } from 'constants/page'
+import { getPageSlug } from 'lib/pageSlug'
 
 export default Page
 
 export async function getStaticProps({ params, preview = false, previewData }) {
   const { masterRef } = await PrismicClient.getApi()
   const ref = previewData?.ref || masterRef.ref
-  const slug = params.slug?.length ? `/${params.slug.join('/')}/` : '/'
+
+  // Get pages based on ending slug
+  const slugArray = params.slug
+  const slug = slugArray?.length ? slugArray[slugArray.length - 1] : 'home'
+
   const { results } = await PrismicClient.query(
-    Prismic.Predicates.at('my.page.slug', slug),
+    Prismic.Predicates.at('my.page.page_slug', slug),
     {
-      fetchLinks: ['page.slug'],
+      fetchLinks: pageFetchLinks,
       ref,
+      pageSize: 100, // page slug is a non-unique field
     }
   )
+
+  // Go through results if there are parent pages
+  let page = null
+  if (results && results.length) {
+    const curSlug = slugArray.join('/')
+    const resolvedPage = results.find((result) => {
+      // Determine result's full slug based on parent pages
+      const resultParentPages = getPageSlug(result)
+
+      // Compare the result's parent slugs to the actual url
+      const isMatch = resultParentPages.join('/') === curSlug
+      return isMatch ? result : null
+    })
+
+    page = resolvedPage
+  }
+
+  // Get global layout items
   const { data: header } = await PrismicClient.getSingle('header', {
-    fetchLinks: ['page.slug'],
+    fetchLinks: pageSlugFetchlinks,
     ref,
   })
-  const page = results[0]
 
   return {
     props: {
@@ -32,14 +57,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 }
 
 export async function getStaticPaths() {
-  const { results: allPages } = await PrismicClient.query(
-    Prismic.Predicates.at('document.type', 'page')
-  )
-  const paths = allPages
-    ?.filter((page) => page.data.slug !== '/')
-    .map((page) => ({
-      params: { slug: page.data.slug.split('/').filter((path) => path !== '') },
-    }))
+  const paths = await getPagePaths({ excludeId: homeID })
 
   return {
     paths,

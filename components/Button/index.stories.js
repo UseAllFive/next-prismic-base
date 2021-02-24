@@ -2,7 +2,7 @@ import Component from './index.js'
 
 export default {
   title: 'Button',
-  component: Button,
+  component: Component,
 }
 
 const Template = (args) => <Component {...args} />
