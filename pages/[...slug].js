@@ -57,7 +57,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = await getPagePaths({ excludeId: homeID })
+  const paths = await getPagePaths({ pageType: 'page', excludeId: homeID })
 
   return {
     paths,
