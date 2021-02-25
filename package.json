@@ -55,7 +55,7 @@
     "husky": "^4.3.8",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "stylelint": "^13.10.0",
+    "stylelint": "^13.11.0",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-config-standard": "^20.0.0"
   }
