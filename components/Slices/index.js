@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import RichText from 'components/RichText'
 import Carousel from 'components/Carousel'
+import { useGlobalContext } from 'components/Layout/global'
 
 const Slices = ({ slices }) => {
   return (
@@ -23,6 +24,8 @@ const Slices = ({ slices }) => {
         }
         return <div key={i}>{Component}</div>
       })}
+
+      <div>GLOBAL DATA: {useGlobalContext().todoData}</div>
     </>
   )
 }

@@ -6,10 +6,11 @@ import Meta from '../Meta'
 import { motion } from 'framer-motion'
 import headerShape from 'components/Header/shape'
 import metaShape from 'components/Meta/shape'
+import { GlobalWrapper } from './global'
 
 const Layout = ({ metadata, header, preview, children }) => {
   return (
-    <>
+    <GlobalWrapper todoData={'TODO this is a global string'}>
       <Meta metadata={metadata} />
       {preview && <PreviewBar />}
       <Header header={header} />
@@ -21,7 +22,7 @@ const Layout = ({ metadata, header, preview, children }) => {
         <main>{children}</main>
       </motion.div>
       <Footer />
-    </>
+    </GlobalWrapper>
   )
 }
 
