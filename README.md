@@ -5,10 +5,14 @@
 
 # YOUR_PROJECTS_NAME_HERE
 
+## What you need to know
+
 It's highly suggested that you read through the Next and Prismic documentation below before starting
 
 - [Next.js](https://nextjs.org/)
 - [Prismic](https://prismic.io/)
+
+UA5 has also put together a [playlist of videos](https://www.youtube.com/playlist?list=PLR2sMJTX0y3FemVvbjp-rGlTALEth-Si9) that provide a bird's eye view our toolset. 
 
 ## Already connected to Prismic?
 
