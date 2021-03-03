@@ -2,8 +2,7 @@ import Prismic from 'prismic-javascript'
 import { PrismicClient } from 'lib/api'
 import Page from 'components/Page'
 import { getPagePaths } from 'lib/pathFormation'
-import { homeID, pageFetchLinks, pageSlugFetchlinks } from 'constants/page'
-import { getPageSlug } from 'lib/pageSlug'
+import { homeID, pageFetchLinks, pageSlugFetchLinks } from 'constants/page'
 
 export default Page
 
@@ -11,38 +10,21 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   const { masterRef } = await PrismicClient.getApi()
   const ref = previewData?.ref || masterRef.ref
 
-  // Get pages based on ending slug
-  const slugArray = params.slug
-  const slug = slugArray?.length ? slugArray[slugArray.length - 1] : 'home'
+  const slug = params.slug.join('/')
 
   const { results } = await PrismicClient.query(
-    Prismic.Predicates.at('my.page.page_slug', slug),
+    Prismic.Predicates.fulltext('my.page.slug', slug),
     {
       fetchLinks: pageFetchLinks,
       ref,
-      pageSize: 100, // page slug is a non-unique field
     }
   )
 
-  // Go through results if there are parent pages
-  let page = null
-  if (results && results.length) {
-    const curSlug = slugArray.join('/')
-    const resolvedPage = results.find((result) => {
-      // Determine result's full slug based on parent pages
-      const resultParentPages = getPageSlug(result)
-
-      // Compare the result's parent slugs to the actual url
-      const isMatch = resultParentPages.join('/') === curSlug
-      return isMatch ? result : null
-    })
-
-    page = resolvedPage
-  }
+  const page = results[0]
 
   // Get global layout items
   const { data: header } = await PrismicClient.getSingle('header', {
-    fetchLinks: pageSlugFetchlinks,
+    fetchLinks: pageSlugFetchLinks,
     ref,
   })
 
