@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "framer-motion": "^3.7.0",
+    "framer-motion": "^3.9.0",
     "next": "10.0.7",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
@@ -37,7 +37,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.1",
+    "@babel/core": "^7.13.8",
     "@storybook/addon-actions": "^6.1.20",
     "@storybook/addon-essentials": "^6.1.20",
     "@storybook/addon-links": "^6.1.20",
@@ -46,8 +46,8 @@
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
     "chromatic": "^5.6.3",
-    "css-loader": "^5.1.0",
-    "eslint": "^7.20.0",
+    "css-loader": "^5.1.1",
+    "eslint": "^7.21.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-react": "^7.22.0",
