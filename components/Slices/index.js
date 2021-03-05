@@ -4,6 +4,9 @@ import Carousel from 'components/Carousel'
 import { useGlobalContext } from 'components/Layout/global'
 
 const Slices = ({ slices }) => {
+  // TODO delete this global context example and use where necessary
+  const { todoData } = useGlobalContext()
+
   return (
     <>
       {slices.map((slice, i) => {
@@ -25,7 +28,7 @@ const Slices = ({ slices }) => {
         return <div key={i}>{Component}</div>
       })}
 
-      <div>GLOBAL DATA: {useGlobalContext().todoData}</div>
+      <div>GLOBAL DATA: {todoData}</div>
     </>
   )
 }
