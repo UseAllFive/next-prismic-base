@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import prismicImageShare from 'shapes/prismic/image'
+import prismicImageShape from 'shapes/prismic/image'
 
 const metaProps = {
   meta_title: PropTypes.string,
   meta_description: PropTypes.string,
-  meta_image: prismicImageShare,
+  meta_image: PropTypes.oneOfType[(PropTypes.string, prismicImageShape)],
 }
 
 export { metaProps }

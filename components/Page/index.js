@@ -5,6 +5,7 @@ import Slices from 'components/Slices'
 import headerShape from 'components/Header/shape'
 import { useRouter } from 'next/router'
 import pageShape from './shape'
+import { getMetaData } from 'components/Meta/lib'
 
 const Page = ({ page, header, preview }) => {
   const router = useRouter()
@@ -12,13 +13,8 @@ const Page = ({ page, header, preview }) => {
     return <ErrorPage statusCode={404} />
   }
 
-  const metadata = {
-    /* eslint-disable react/prop-types */
-    meta_title: page?.meta_title,
-    meta_description: page?.meta_description,
-    meta_image: page?.meta_image,
-    /* eslint-enable */
-  }
+  // Set page metadata
+  const metadata = getMetaData(page)
 
   return (
     <Layout preview={preview} metadata={metadata} header={header}>
