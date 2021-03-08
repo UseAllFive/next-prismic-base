@@ -1,4 +1,4 @@
-import PrismicLink from '../PrismicLink'
+import PrismicLink from 'components/Pieces/PrismicLink'
 import headerShape from './shape'
 
 const Header = ({ header }) => {

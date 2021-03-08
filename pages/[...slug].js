@@ -1,6 +1,6 @@
 import Prismic from 'prismic-javascript'
 import { PrismicClient } from 'lib/api'
-import Page from 'components/Page'
+import Page from 'components/Templates/Page'
 import { getPagePaths } from 'lib/pathFormation'
 import { homeID, pageFetchLinks, pageSlugFetchLinks } from 'constants/page'
 

@@ -4,8 +4,8 @@ import Footer from '../Footer'
 import Header from '../Header'
 import Meta from '../Meta'
 import { motion } from 'framer-motion'
-import headerShape from 'components/Header/shape'
-import metaShape from 'components/Meta/shape'
+import headerShape from 'components/Layout/Header/shape'
+import metaShape from 'components/Layout/Meta/shape'
 
 const Layout = ({ metadata, header, preview, children }) => {
   return (

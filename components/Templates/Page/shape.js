@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { metaProps } from 'components/Meta/shape'
+import { metaProps } from 'components/Layout/Meta/shape'
 
 const pageShape = PropTypes.shape({
   data: PropTypes.shape({

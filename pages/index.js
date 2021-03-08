@@ -1,6 +1,6 @@
 // An index.js file is required for deploying w/ vercel
 import { PrismicClient, api } from 'lib/api'
-import Page from 'components/Page'
+import Page from 'components/Templates/Page'
 import { pageSlugFetchLinks } from 'constants/page'
 
 export default Page

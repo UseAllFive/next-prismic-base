@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import RichText from 'components/RichText'
-import Carousel from 'components/Carousel'
+import RichText from 'components/Slices/RichText'
+import Carousel from 'components/Slices/Carousel'
 
 const Slices = ({ slices }) => {
   return (
