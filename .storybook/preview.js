@@ -47,23 +47,33 @@ Object.defineProperty(nextImage, 'default', {
   value: (props) => {
     const { width, height, layout } = props
     const ratio = (height / width) * 100
+
     return (
       <div
         style={{
-          paddingBottom: layout !== 'fill' && `${ratio}%`,
-          position: layout !== 'fill' ? 'relative' : 'absolute',
-          overflow: layout === 'fill' && 'hidden',
-          inset: layout === 'fill' && 0,
+          maxWidth: layout !== 'fill' && width,
+          display: 'inline-block',
+          width: '100%',
         }}>
-        <img
+        <div
           style={{
-            objectFit: 'cover',
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-          }}
-          {...props}
-        />
+            paddingBottom: layout !== 'fill' && `${ratio}%`,
+            position: layout !== 'fill' ? 'relative' : 'absolute',
+            overflow: layout === 'fill' && 'hidden',
+            inset: layout === 'fill' && 0,
+          }}>
+          <img
+            style={{
+              objectFit: 'cover',
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              left: 0,
+              top: 0,
+            }}
+            {...props}
+          />
+        </div>
       </div>
     )
   },
