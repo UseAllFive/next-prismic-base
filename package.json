@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "framer-motion": "^3.9.0",
-    "next": "10.0.7",
+    "framer-motion": "^4.0.0",
+    "next": "10.0.9",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "prismic-javascript": "3.0.2",
@@ -32,22 +32,22 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-slick": "^0.28.0",
+    "react-slick": "^0.28.1",
     "sass": "^1.32.8",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@storybook/addon-actions": "^6.1.20",
-    "@storybook/addon-essentials": "^6.1.20",
-    "@storybook/addon-links": "^6.1.20",
+    "@babel/core": "^7.13.10",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
     "@storybook/preset-scss": "^1.0.3",
-    "@storybook/react": "^6.1.20",
+    "@storybook/react": "^6.1.21",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
-    "chromatic": "^5.6.3",
-    "css-loader": "^5.1.1",
-    "eslint": "^7.21.0",
+    "chromatic": "^5.7.0",
+    "css-loader": "^5.1.2",
+    "eslint": "^7.22.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-react": "^7.22.0",
@@ -55,8 +55,8 @@
     "husky": "^4.3.8",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "stylelint": "^13.11.0",
+    "stylelint": "^13.12.0",
     "stylelint-config-sass-guidelines": "^7.1.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^21.0.0"
   }
 }
