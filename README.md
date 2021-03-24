@@ -12,7 +12,7 @@ It's highly suggested that you read through the Next and Prismic documentation b
 - [Next.js](https://nextjs.org/)
 - [Prismic](https://prismic.io/)
 
-UA5 has also put together a [playlist of videos](https://www.youtube.com/playlist?list=PLR2sMJTX0y3FemVvbjp-rGlTALEth-Si9) that provide a bird's eye view our toolset. 
+UA5 has also put together a [playlist of videos](https://www.youtube.com/playlist?list=PLR2sMJTX0y3FemVvbjp-rGlTALEth-Si9) that provide a bird's eye view our toolset.
 
 ## Already connected to Prismic?
 
@@ -44,6 +44,17 @@ Your site should be up and running on [http://localhost:3000](http://localhost:3
 ## Managing data
 
 The CMS for this site is [hosted on Prismic](https://prismic.io).
+
+## File Structure Organization
+
+### Components Directory
+
+The components directory is where you'll be creating the component templates that form your site. The directory is broken up into four subdirectories:
+
+1. **Layout**. Here you will add global components which make up the layout of your site across all pages. The navigation, footer, grid, and any other component which could be considered "global" go here.
+2. **Pieces**. Repeatable pieces of the site that can be found across multiple components, such as a button or link. OR, a chunk of another component broken down, such as slideshow arrows or video overlay.
+3. **Slices**. These should correspond directly with your prismic slices.
+4. **Templates**. These will be called by whatever routes you've created under `pages`. So here you might have your base page template, plus a blog post template.
 
 ## Storybook
 
