@@ -1,17 +1,21 @@
 import Head from 'next/head'
 import metaShape from './shape'
+import metaDefaults from 'constants/metadata'
 
-const Meta = ({ metadata }) => {
-  // TODO: update default metadata
-  const metaDefaults = {
-    TWITTER_HANDLE: '{@twitterHandle}',
-    TITLE: '{Default Title}',
-    DESCRIPTION: '{Default description}',
-    IMAGE: '{path_to_share_image.jpg}',
-  }
-  const title = metadata?.meta_title || metaDefaults.TITLE
-  const description = metadata?.meta_description || metaDefaults.DESCRIPTION
-  const image = metadata?.meta_image?.url || metaDefaults.IMAGE
+const Meta = ({ metadata, defaults }) => {
+  // Set metadata with page-specific settings, OR fallback to prismic defaults, OR finally fallback to defaults set in /constants/metadata file
+  const pageTitle = metadata?.meta_title || defaults?.title
+  const _title = pageTitle
+    ? pageTitle + ' ' + metaDefaults.DIVIDER + ' ' + metaDefaults.TITLE
+    : null
+  const title = _title || metaDefaults.TITLE
+  const description =
+    metadata?.meta_description ||
+    defaults?.description ||
+    metaDefaults.DESCRIPTION
+  const image =
+    metadata?.meta_image?.url || defaults?.image?.url || metaDefaults.IMAGE
+
   return (
     <Head>
       <link
@@ -56,6 +60,7 @@ const Meta = ({ metadata }) => {
 
 Meta.propTypes = {
   metadata: metaShape,
+  defaults: metaShape,
 }
 
 export default Meta

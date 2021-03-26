@@ -10,7 +10,8 @@ import metaShape from 'components/Layout/Meta/shape'
 const Layout = ({ metadata, header, preview, children }) => {
   return (
     <>
-      <Meta metadata={metadata} />
+      {/* TODO create defaults in Prismic singleton */}
+      <Meta metadata={metadata} defaults={null} />
       {preview && <PreviewBar />}
       <Header header={header} />
       {/* TODO: customize your transition animation */}
