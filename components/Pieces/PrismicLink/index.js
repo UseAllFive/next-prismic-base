@@ -29,7 +29,7 @@ const PrismicLink = ({
         className={className}
         link={link}
         activeClassName={activeClassName}>
-        {children}
+        {children ?? ''}
       </JumpLink>
     )
   } else if (
@@ -39,11 +39,11 @@ const PrismicLink = ({
   ) {
     return (
       <RegularLink className={className} link={link}>
-        {children}
+        {children ?? ''}
       </RegularLink>
     )
   } else {
-    return <NoLink className={className}>{children}</NoLink>
+    return <NoLink className={className}>{children ?? ''}</NoLink>
   }
 }
 
@@ -123,7 +123,6 @@ NoLink.propTypes = {
 
 const JumpLink = ({ className, link, children, activeClassName }) => {
   const { url } = link
-
   const router = useRouter()
   const href = url?.split('https://anchor:')[1]
   const jump = (e) => {
