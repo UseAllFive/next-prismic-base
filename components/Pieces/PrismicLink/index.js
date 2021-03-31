@@ -55,7 +55,7 @@ PrismicLink.propTypes = {
 export default PrismicLink
 
 const DocumentLink = (props) => {
-  const { className, activeClassName, link, children } = props
+  const { className, activeClassName, nextLink, link, children } = props
 
   let isActive
   const href = nextLink ? link : linkResolver(link)
