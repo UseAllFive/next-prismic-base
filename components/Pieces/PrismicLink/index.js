@@ -25,7 +25,10 @@ const PrismicLink = ({
     url.indexOf('https://anchor') !== -1
   ) {
     return (
-      <JumpLink className={className} link={link}>
+      <JumpLink
+        className={className}
+        link={link}
+        activeClassName={activeClassName}>
         {children}
       </JumpLink>
     )
@@ -81,9 +84,8 @@ const DocumentLink = (props) => {
 DocumentLink.propTypes = {
   className: PropTypes.string,
   activeClassName: PropTypes.string,
-  link: prismicLinkShape,
-  queryParam: PropTypes.string,
-  onClick: PropTypes.func,
+  link: PropTypes.oneOfType([prismicLinkShape, PropTypes.string]),
+  nextLink: PropTypes.bool,
   children: PropTypes.node,
 }
 
@@ -103,7 +105,7 @@ const RegularLink = (props) => {
 
 RegularLink.propTypes = {
   className: PropTypes.string,
-  link: prismicLinkShape,
+  link: PropTypes.oneOfType([prismicLinkShape, PropTypes.string]),
   children: PropTypes.node,
 }
 
@@ -118,7 +120,7 @@ NoLink.propTypes = {
 }
 
 const JumpLink = (props) => {
-  const { className, link, children } = props
+  const { className, link, children, activeClassName } = props
   const { url } = link
 
   const router = useRouter()
@@ -144,6 +146,7 @@ const JumpLink = (props) => {
 
 JumpLink.propTypes = {
   className: PropTypes.string,
-  link: prismicLinkShape,
+  activeClassName: PropTypes.string,
+  link: PropTypes.oneOfType([prismicLinkShape, PropTypes.string]),
   children: PropTypes.node,
 }
