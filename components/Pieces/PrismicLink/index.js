@@ -47,13 +47,15 @@ const PrismicLink = ({
   }
 }
 
-PrismicLink.propTypes = {
+const prismicLinkPropTypes = {
   className: PropTypes.string,
   activeClassName: PropTypes.string,
   link: PropTypes.oneOfType([prismicLinkShape, PropTypes.string]),
   nextLink: PropTypes.bool,
   children: PropTypes.node,
 }
+
+PrismicLink.propTypes = prismicLinkPropTypes
 
 export default PrismicLink
 
@@ -85,13 +87,7 @@ const DocumentLink = ({
   )
 }
 
-DocumentLink.propTypes = {
-  className: PropTypes.string,
-  activeClassName: PropTypes.string,
-  link: PropTypes.oneOfType([prismicLinkShape, PropTypes.string]),
-  nextLink: PropTypes.bool,
-  children: PropTypes.node,
-}
+DocumentLink.propTypes = prismicLinkPropTypes
 
 const RegularLink = (className, children, link) => {
   const { url, target } = link || {}
