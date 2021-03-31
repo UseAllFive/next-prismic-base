@@ -87,7 +87,7 @@ DocumentLink.propTypes = {
   children: PropTypes.node,
 }
 
-const RegularLink = () => {
+const RegularLink = (props) => {
   const { className, children, link } = props
   const { url, target } = link || {}
   return (
@@ -117,7 +117,7 @@ NoLink.propTypes = {
   children: PropTypes.node,
 }
 
-const JumpLink = () => {
+const JumpLink = (props) => {
   const { className, link, children } = props
   const { url } = link
 
