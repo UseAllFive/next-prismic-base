@@ -29,7 +29,7 @@ const PrismicLink = ({
         className={className}
         link={link}
         activeClassName={activeClassName}>
-        {children ?? ''}
+        {children}
       </JumpLink>
     )
   } else if (
@@ -39,11 +39,11 @@ const PrismicLink = ({
   ) {
     return (
       <RegularLink className={className} link={link}>
-        {children ?? ''}
+        {children}
       </RegularLink>
     )
   } else {
-    return <NoLink className={className}>{children ?? ''}</NoLink>
+    return <NoLink className={className}>{children}</NoLink>
   }
 }
 
@@ -89,7 +89,7 @@ const DocumentLink = ({
 
 DocumentLink.propTypes = prismicLinkPropTypes
 
-const RegularLink = (className, children, link) => {
+const RegularLink = ({ className, children, link }) => {
   const { url, target } = link || {}
   return (
     <a
