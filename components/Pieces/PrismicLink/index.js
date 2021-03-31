@@ -57,9 +57,13 @@ PrismicLink.propTypes = {
 
 export default PrismicLink
 
-const DocumentLink = (props) => {
-  const { className, activeClassName, nextLink, link, children } = props
-
+const DocumentLink = ({
+  className,
+  activeClassName,
+  nextLink,
+  link,
+  children,
+}) => {
   let isActive
   const href = nextLink ? link : linkResolver(link)
   if (useRouter()) {
@@ -89,8 +93,7 @@ DocumentLink.propTypes = {
   children: PropTypes.node,
 }
 
-const RegularLink = (props) => {
-  const { className, children, link } = props
+const RegularLink = (className, children, link) => {
   const { url, target } = link || {}
   return (
     <a
@@ -109,8 +112,7 @@ RegularLink.propTypes = {
   children: PropTypes.node,
 }
 
-const NoLink = (props) => {
-  const { className, children } = props
+const NoLink = ({ className, children }) => {
   return <span className={className}>{children}</span>
 }
 
@@ -119,8 +121,7 @@ NoLink.propTypes = {
   children: PropTypes.node,
 }
 
-const JumpLink = (props) => {
-  const { className, link, children, activeClassName } = props
+const JumpLink = ({ className, link, children, activeClassName }) => {
   const { url } = link
 
   const router = useRouter()
