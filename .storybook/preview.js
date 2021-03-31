@@ -63,6 +63,7 @@ Object.defineProperty(nextImage, 'default', {
             inset: layout === 'fill' && 0,
           }}>
           <img
+            data-chromatic="ignore" // ignore images in Chromatic since placekittens are random
             style={{
               objectFit: 'cover',
               position: 'absolute',
