@@ -20,6 +20,14 @@ If you have not yet connected this codebase to Prismic [carefully read through t
 
 ## Configuration
 
+### Disable dependabot
+
+Unless you want to be bugged monthly about dependency updates, we recommend that you remove /.github/dependabot.yaml to prevent GitHub from checking for dependencies updates. You can manually trigger updates by running:
+
+```
+yarn upgrade --latest
+```
+
 ### Set up environment variables
 
 Get a copy of the `.env.local` file from a UA5 colleague and add the file to the project root. Make sure that file is sent and received securely since this document will contain sensitive information that needs to remain hidden.
