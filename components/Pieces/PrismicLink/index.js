@@ -10,6 +10,7 @@ import { Link as L } from 'prismic-reactjs'
 
 // Passes Prismic link objects into next/link
 // Can handle links to Documents and Web
+// Adds an active class to links that match current route
 const PrismicLink = ({
   activeIsExact, // Defaults to matching all parents of current route as active
   activeClassName,
