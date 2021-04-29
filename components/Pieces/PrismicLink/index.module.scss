@@ -1,4 +1,9 @@
-.link,
+.link:hover {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
 .linkActive {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
 }

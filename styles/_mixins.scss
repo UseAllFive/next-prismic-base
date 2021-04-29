@@ -67,10 +67,12 @@
   display: inline-flex;
   padding: 8px 40px;
   text-align: center;
+  text-decoration: none;
 
   &:hover {
     background: $hover-bg;
     color: $hover-color;
+    text-decoration: none;
   }
 }
 
