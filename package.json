@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "framer-motion": "^4.1.5",
+    "framer-motion": "^4.1.11",
     "next": "10.2.0",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
