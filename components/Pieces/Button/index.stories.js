@@ -1,9 +1,11 @@
 import Component from './index.js'
 
-export default {
+const ButtonStoryProps = {
   title: 'Button',
   component: Component,
 }
+
+export default ButtonStoryProps
 
 const Template = (args) => <Component {...args} />
 

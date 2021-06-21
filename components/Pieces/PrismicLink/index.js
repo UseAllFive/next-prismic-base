@@ -22,8 +22,8 @@ const PrismicLink = ({
   const href = L.url(link, linkResolver)
 
   // Determine if link matches current route
-  if (useRouter()) {
-    const { asPath } = useRouter()
+  const { asPath } = useRouter()
+  if (asPath) {    
     const i = asPath.indexOf('?')
     const path = i > 0 ? `${asPath.substring(0, i)}/` : `${asPath}/`
     const LEADING_AND_TRAILING_SLASH_REGEX = /^\/|\/$/g
@@ -41,7 +41,7 @@ const PrismicLink = ({
           [activeClassName]: isActive,
           [styles.linkActive]: isActive,
         })}
-        rel={link.link_type === 'Web' && 'noreferrer'}
+        rel={link.link_type === 'Web' ? 'noreferrer' : ''}
         target={link.target}>
         {children}
       </a>

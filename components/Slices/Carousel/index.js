@@ -15,6 +15,8 @@ const Carousel = ({ items }) => {
         return (
           <div key={i}>
             <Image
+              blurDataURL={`${image.url}?blur=200&px=16&auto=format`}
+              placeholder="blur"
               src={image.url}
               width={image.dimensions.width}
               height={image.dimensions.height}

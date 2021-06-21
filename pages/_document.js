@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from 'lib/analytics'
+import Script from 'next/script'
 
 export default class MyDocument extends Document {
   render() {
@@ -9,10 +10,7 @@ export default class MyDocument extends Document {
           {process.env.NODE_ENV === 'production' && (
             <>
               {/* Global Site Tag (gtag.js) - Google Analytics */}
-              <script
-                async
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-              />
+              <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
               <script
                 dangerouslySetInnerHTML={{
                   __html: `
