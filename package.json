@@ -37,7 +37,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
+    "@babel/core": "^7.14.6",
     "@storybook/addon-a11y": "^6.2.9",
     "@storybook/addon-actions": "^6.2.8",
     "@storybook/addon-essentials": "^6.2.1",
