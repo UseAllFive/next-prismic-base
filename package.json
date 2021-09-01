@@ -33,7 +33,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-slick": "^0.28.1",
-    "sass": "^1.32.12",
+    "sass": "^1.38.2",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
