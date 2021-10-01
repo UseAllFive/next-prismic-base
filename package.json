@@ -53,7 +53,7 @@
     "file-loader": "^6.2.0",
     "husky": "^4.3.8",
     "sass-loader": "^10.1.1",
-    "style-loader": "^2.0.0",
+    "style-loader": "^3.3.0",
     "stylelint": "^13.13.1",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-config-standard": "^22.0.0"
