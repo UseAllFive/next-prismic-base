@@ -10,7 +10,10 @@ export default class MyDocument extends Document {
           {process.env.NODE_ENV === 'production' && (
             <>
               {/* Global Site Tag (gtag.js) - Google Analytics */}
-              <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+              />
               <script
                 dangerouslySetInnerHTML={{
                   __html: `
