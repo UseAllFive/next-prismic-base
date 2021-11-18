@@ -31,11 +31,19 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
   try {
     slugQuery = await PrismicClient.query(
+      // we're looking up all pages with a handle_override that matches this url's
+      // later down in the code we check if the parent matches,
+      // what this means:
+      // we'll grab all pages that are called "about" in the override field
+      // then later below, we only find the one that matches parent/about
       [Prismic.Predicates.at('my.page.handle_override', slug)],
       {
         fetchLinks: pageFetchLinks,
         ref,
-        pageSize: 100, // page slug is a non-unique field
+        // page handle_override is a non-unique field, so we must find a bunch
+        // this assumes there wont be 101+ pages with the same child slug name
+        // meaning, you can't have 101 pages called about
+        pageSize: 100,
       }
     )
   } catch (err) {
