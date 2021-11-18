@@ -9,7 +9,8 @@
             "config": {
               "allowTargetBlank": true,
               "label": "link",
-              "placeholder": "select a page or enter a URL"
+              "placeholder": "select a page or enter a URL",
+              "select": null
             }
           },
           "link_text": {
