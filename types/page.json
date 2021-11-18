@@ -1,59 +1,86 @@
 {
-  "Main" : {
-    "prismic_title" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Prismic Title",
-        "useAsTitle" : true
+  "Main": {
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title"
       }
     },
-    "slug" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "Slug",
-        "placeholder" : "/about/mission-statement/"
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Page Handle (e.g. contact-us)"
       }
     },
-    "body" : {
-      "type" : "Slices",
-      "fieldset" : "Slice zone",
-      "config" : {
-        "labels" : {
-          "richtext" : [ ],
-          "carousel" : [ ]
+    "handle_override": {
+      "type": "Text",
+      "config": {
+        "label": "Page Handle Override (if you need a library/visit and a page called visit)"
+      }
+    },
+    "parent_pages": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "parent_page": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "label": "Parent Page",
+              "customtypes": ["page"]
+            }
+          }
         },
-        "choices" : {
-          "richtext" : {
-            "type" : "Slice",
-            "fieldset" : "richtext",
-            "description" : "simple richtext slice",
-            "icon" : "text_fields",
-            "display" : "list",
-            "non-repeat" : {
-              "richtext" : {
-                "type" : "StructuredText",
-                "config" : {
-                  "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
-                  "label" : "richtext"
+        "label": "Parent Pages"
+      }
+    },
+    "slug": {
+      "type": "Text",
+      "config": {
+        "label": "Slug (deprecated)",
+        "placeholder": "/about/mission-statement/"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "richtext": [],
+          "carousel": []
+        },
+        "choices": {
+          "richtext": {
+            "type": "Slice",
+            "fieldset": "richtext",
+            "description": "simple richtext slice",
+            "icon": "text_fields",
+            "display": "list",
+            "non-repeat": {
+              "richtext": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,o-list-item",
+                  "label": "richtext"
                 }
               }
             },
-            "repeat" : { }
+            "repeat": {}
           },
-          "carousel" : {
-            "type" : "Slice",
-            "fieldset" : "carousel",
-            "description" : "simple image carousel",
-            "icon" : "burst_mode",
-            "display" : "list",
-            "non-repeat" : { },
-            "repeat" : {
-              "image" : {
-                "type" : "Image",
-                "config" : {
-                  "constraint" : { },
-                  "thumbnails" : [ ],
-                  "label" : "image"
+          "carousel": {
+            "type": "Slice",
+            "fieldset": "carousel",
+            "description": "simple image carousel",
+            "icon": "burst_mode",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image"
                 }
               }
             }
@@ -62,25 +89,25 @@
       }
     }
   },
-  "Meta" : {
-    "meta_title" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "meta title"
+  "Meta": {
+    "meta_title": {
+      "type": "Text",
+      "config": {
+        "label": "meta title"
       }
     },
-    "meta_description" : {
-      "type" : "Text",
-      "config" : {
-        "label" : "meta description"
+    "meta_description": {
+      "type": "Text",
+      "config": {
+        "label": "meta description"
       }
     },
-    "meta_image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "meta image"
+    "meta_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "meta image"
       }
     }
   }
