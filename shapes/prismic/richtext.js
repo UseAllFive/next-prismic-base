@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const prismicRichTextShare = PropTypes.arrayOf(
+const prismicRichTextShape = PropTypes.arrayOf(
   PropTypes.shape({
     type: PropTypes.string,
     text: PropTypes.string,
@@ -14,4 +14,4 @@ const prismicRichTextShare = PropTypes.arrayOf(
   })
 )
 
-export default prismicRichTextShare
+export default prismicRichTextShape
