@@ -1,5 +1,5 @@
 import styles from './index.module.scss'
-import prismicRichTextShare from 'shapes/prismic/richtext'
+import prismicRichTextShape from 'shapes/prismic/richtext'
 import RichTextField from 'components/Pieces/RichTextField'
 
 const RichTextComponent = ({ richtext }) => {
@@ -11,7 +11,7 @@ const RichTextComponent = ({ richtext }) => {
 }
 
 RichTextComponent.propTypes = {
-  richtext: prismicRichTextShare,
+  richtext: prismicRichTextShape,
 }
 
 export default RichTextComponent

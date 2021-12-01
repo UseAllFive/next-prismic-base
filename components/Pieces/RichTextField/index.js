@@ -1,5 +1,5 @@
 import { RichText } from 'prismic-reactjs'
-import prismicRichTextShare from 'shapes/prismic/richtext'
+import prismicRichTextShape from 'shapes/prismic/richtext'
 import htmlSerializer from './html-serializer'
 
 const RichTextField = ({ text }) => {
@@ -7,7 +7,7 @@ const RichTextField = ({ text }) => {
 }
 
 RichTextField.propTypes = {
-  text: prismicRichTextShare,
+  text: prismicRichTextShape,
 }
 
 export default RichTextField
