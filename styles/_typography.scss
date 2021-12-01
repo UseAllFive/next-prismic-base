@@ -2,28 +2,26 @@
 // with multiple files for each type style.
 // The below is just an example of how you could
 // create a mixin called `title` that utilizes
-// the typography mixin
+// the font mixin
 
 @use 'mixins' as m;
 
-$_size: (
-  sm: 20px,
-  md: 40px,
-  lg: 60px,
-);
-
-$_height: (
-  sm: 1,
-  md: 1,
-  lg: 1,
-);
-
-$_spacing: (
-  sm: normal,
-  md: normal,
-  lg: normal,
-);
-
-@mixin title() {
-  @include m.typography($size: $_size, $height: $_height, $spacing: $_spacing);
+@mixin title {
+  @include m.font(
+    $font-size: (
+      sm: 20px,
+      md: 40px,
+      lg: 60px,
+    ),
+    $line-height: (
+      sm: 1,
+      md: 1,
+      lg: 1,
+    ),
+    $letter-spacing: (
+      sm: normal,
+      md: normal,
+      lg: normal,
+    )
+  );
 }
