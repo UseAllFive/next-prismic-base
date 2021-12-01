@@ -21,6 +21,12 @@
   }
 }
 
+@mixin hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
 @mixin slice {
   padding-bottom: v.$slice-pad;
   padding-top: v.$slice-pad;
