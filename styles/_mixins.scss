@@ -6,6 +6,38 @@
   }
 }
 
+@mixin font(
+  $font-family: v.$font-family,
+  $font-size: (
+    sm: 16px,
+    md: 16px,
+    lg: 16px,
+  ),
+  $letter-spacing: (
+    sm: 0,
+    md: 0,
+    lg: 0,
+  ),
+  $line-height: (
+    sm: 1.2,
+    md: 1.2,
+    lg: 1.2,
+  )
+) {
+  font-family: $font-family;
+  font-size: map-get($font-size, sm);
+  letter-spacing: map-get($letter-spacing, sm);
+  line-height: map-get($line-height, sm);
+
+  @each $key, $breakpoint in v.$breakpoints {
+    @include breakpoint($breakpoint) {
+      font-size: map-get($font-size, $key);
+      letter-spacing: map-get($letter-spacing, $key);
+      line-height: map-get($line-height, $key);
+    }
+  }
+}
+
 // Centered container with a max-width and gutters on both sides
 @mixin container {
   margin-left: auto;
@@ -79,19 +111,5 @@
     background: $hover-bg;
     color: $hover-color;
     text-decoration: none;
-  }
-}
-
-@mixin typography($font: v.$font-primary, $size, $height, $spacing) {
-  font-family: $font;
-  font-size: map-get($size, sm);
-  line-height: map-get($height, sm);
-
-  @each $key, $breakpoint in v.$breakpoints {
-    @include breakpoint($breakpoint) {
-      font-size: map-get($size, $key);
-      letter-spacing: map-get($spacing, $key);
-      line-height: map-get($height, $key);
-    }
   }
 }
