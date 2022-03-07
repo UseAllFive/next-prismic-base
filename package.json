@@ -12,7 +12,7 @@
     "lint:js": "eslint components/** pages/** lib/** shapes/**",
     "lint:scss": "npx stylelint '**/*.scss'",
     "lint": "yarn lint:js && yarn lint:scss",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=${MY_TOKEN} --skip 'dependabot/**'"
   },
