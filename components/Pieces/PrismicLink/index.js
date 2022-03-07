@@ -37,6 +37,7 @@ const Link = ({
 
   return (
     <NextLink {...{ href }}>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a
         className={cn(styles.link, className, {
           [activeClassName]: isActive,

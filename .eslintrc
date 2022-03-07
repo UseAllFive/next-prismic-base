@@ -1,3 +1,18 @@
 {
-  "extends": "next"
+  "plugins": ["react", "react-hooks"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "next"
+  ],
+  "rules": {
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["document", "link"]
+      }
+    ]
+  }
 }
