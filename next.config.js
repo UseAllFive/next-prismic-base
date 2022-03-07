@@ -6,10 +6,7 @@ module.exports = {
   },
   webpack5: true,
   sassOptions: {
-    includePaths: [
-      path.join(__dirname, 'styles'),
-      path.join(__dirname, 'node_modules/slick-carousel/slick/'),
-    ],
+    includePaths: [path.join(__dirname, 'styles')],
   },
   webpack: (_config) => {
     const config = _config

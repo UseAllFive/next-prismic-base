@@ -1,0 +1,12 @@
+.carousel {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+}
+
+.slide {
+  flex: 0 0 100%;
+  position: relative;
+}
