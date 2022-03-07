@@ -1,7 +1,9 @@
 // Styles that need to be globally accessible to components
 import 'normalize.css'
+import '../styles/fonts.css'
 import '../styles/global.scss'
 
+import { RouterContext } from 'next/dist/shared/lib/router-context' // next 12
 import * as nextImage from 'next/image'
 
 export const parameters = {
@@ -39,13 +41,20 @@ export const parameters = {
       },
     },
   },
+  nextRouter: {
+    Provider: RouterContext.Provider,
+    path: '/', // defaults to `/`
+    asPath: '/', // defaults to `/`
+    query: {}, // defaults to `{}`
+    push() {},
+  },
 }
 
 // Replace next/image for Storybook
 Object.defineProperty(nextImage, 'default', {
   configurable: true,
   value: (props) => {
-    const { width, height, layout } = props
+    const { width, height, layout, objectFit, ...imgProps } = props
     const ratio = (height / width) * 100
 
     return (
@@ -72,7 +81,7 @@ Object.defineProperty(nextImage, 'default', {
               left: 0,
               top: 0,
             }}
-            {...props}
+            {...imgProps}
           />
         </div>
       </div>
