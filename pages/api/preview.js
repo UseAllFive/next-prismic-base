@@ -1,11 +1,11 @@
-import { PrismicClient } from '../../lib/api'
+import { client } from '../../lib/prismic'
 import { linkResolver } from '../../lib/resolvers'
 
 export default async function preview(req, res) {
   const { token: ref, documentId } = req.query
 
   // Check the token parameter against the Prismic SDK
-  const url = await PrismicClient.resolvePreviewURL({
+  const url = await client.resolvePreviewURL({
     linkResolver,
     defaultURL: '/',
     documentId,

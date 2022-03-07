@@ -1,5 +1,5 @@
 import * as prismic from '@prismicio/client'
-import { PrismicClient } from 'lib/api'
+import { client } from 'lib/prismic'
 import Page from 'components/Templates/Page'
 import { getPagePaths } from 'lib/pathFormation'
 import { homeID, pageFetchLinks, pageSlugFetchLinks } from 'constants/page'
@@ -8,7 +8,7 @@ import { getPageSlug } from 'lib/pageSlug'
 export default Page
 
 export async function getStaticProps({ params, preview = false, previewData }) {
-  const masterRef = await PrismicClient.getMasterRef()
+  const masterRef = await client.getMasterRef()
   const ref = previewData?.ref || masterRef.ref
 
   // Get pages based on ending slug
@@ -17,7 +17,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   let uidQuery
   let slugQuery
   try {
-    uidQuery = await PrismicClient.get({
+    uidQuery = await client.get({
       predicates: [prismic.predicate.at('my.page.uid', slug)],
       fetchLinks: pageFetchLinks,
       ref,
@@ -28,7 +28,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   }
 
   try {
-    slugQuery = await PrismicClient.get(
+    slugQuery = await client.get(
       // we're looking up all pages with a handle_override that matches this url's
       // later down in the code we check if the parent matches,
       // what this means:
@@ -72,7 +72,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   }
 
   // Get global layout items
-  const { data: header } = await PrismicClient.getSingle('header', {
+  const { data: header } = await client.getSingle('header', {
     fetchLinks: pageSlugFetchLinks,
     ref,
   })
