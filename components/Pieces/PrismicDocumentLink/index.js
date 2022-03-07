@@ -1,28 +1,27 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import cn from 'classnames'
+import { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import NextLink from 'next/link'
-import { Link as PrismicLink } from 'prismic-reactjs'
+import { useRouter } from 'next/router'
+import cn from 'classnames'
 import { linkResolver } from 'lib/resolvers'
-import prismicLinkShape from 'shapes/prismic/link'
-import styles from './index.module.scss'
+import prismicDocumentShape from 'shapes/prismic/document'
 
-// Passes Prismic link objects into next/link
-// Can handle links to Documents and Web
+// Creates next/link component from Prismic document object
+// (e.g. data from content relation field)
 // Adds an active class to links that match current route
 const Link = ({
   activeIsExact, // Defaults to matching all parents of current route as active
   activeClassName,
   className,
-  link = {},
+  document = {},
   children,
   ...props
 }) => {
-  let isActive
-  const href = PrismicLink.url(link, linkResolver)
+  const href = useMemo(() => linkResolver(document), [document])
 
-  // Determine if link matches current route
+  let isActive
+
+  // Determine if document matches current route
   const { asPath } = useRouter()
   if (asPath) {
     const i = asPath.indexOf('?')
@@ -38,14 +37,7 @@ const Link = ({
   return (
     <NextLink {...{ href }}>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a
-        className={cn(styles.link, className, {
-          [activeClassName]: isActive,
-          [styles.linkActive]: isActive,
-        })}
-        rel={link.link_type === 'Web' ? 'noreferrer' : ''}
-        target={link.target}
-        {...props}>
+      <a className={cn(className, { [activeClassName]: isActive })} {...props}>
         {children}
       </a>
     </NextLink>
@@ -56,7 +48,7 @@ const prismicLinkPropTypes = {
   activeClassName: PropTypes.string,
   activeIsExact: PropTypes.bool,
   className: PropTypes.string,
-  link: prismicLinkShape,
+  document: prismicDocumentShape,
   children: PropTypes.node,
 }
 

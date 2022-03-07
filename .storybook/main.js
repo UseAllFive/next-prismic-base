@@ -24,6 +24,7 @@ module.exports = {
         },
       },
     },
+    'storybook-addon-next-router',
   ],
   webpackFinal: async (baseConfig) => {
     const nextConfig = require('../next.config.js')

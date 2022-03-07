@@ -1,5 +1,5 @@
-import Prismic from 'prismic-javascript'
-import { PrismicClient } from 'lib/api'
+import * as prismic from '@prismicio/client'
+import { client } from 'lib/prismic'
 import Page from 'components/Templates/Page'
 import { getPagePaths } from 'lib/pathFormation'
 import { homeID, pageFetchLinks, pageSlugFetchLinks } from 'constants/page'
@@ -8,7 +8,7 @@ import { getPageSlug } from 'lib/pageSlug'
 export default Page
 
 export async function getStaticProps({ params, preview = false, previewData }) {
-  const { masterRef } = await PrismicClient.getApi()
+  const masterRef = await client.getMasterRef()
   const ref = previewData?.ref || masterRef.ref
 
   // Get pages based on ending slug
@@ -17,27 +17,26 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   let uidQuery
   let slugQuery
   try {
-    uidQuery = await PrismicClient.query(
-      [Prismic.Predicates.at('my.page.uid', slug)],
-      {
-        fetchLinks: pageFetchLinks,
-        ref,
-        pageSize: 1, // there can only be one with this uid
-      }
-    )
+    uidQuery = await client.get({
+      predicates: [prismic.predicate.at('my.page.uid', slug)],
+      fetchLinks: pageFetchLinks,
+      ref,
+      pageSize: 1, // there can only be one with this uid
+    })
   } catch (err) {
     uidQuery = { results: [] }
   }
 
   try {
-    slugQuery = await PrismicClient.query(
+    slugQuery = await client.get(
       // we're looking up all pages with a handle_override that matches this url's
       // later down in the code we check if the parent matches,
       // what this means:
       // we'll grab all pages that are called "about" in the override field
       // then later below, we only find the one that matches parent/about
-      [Prismic.Predicates.at('my.page.handle_override', slug)],
+
       {
+        predicates: [prismic.predicate.at('my.page.handle_override', slug)],
         fetchLinks: pageFetchLinks,
         ref,
         // page handle_override is a non-unique field, so we must find a bunch
@@ -73,7 +72,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   }
 
   // Get global layout items
-  const { data: header } = await PrismicClient.getSingle('header', {
+  const { data: header } = await client.getSingle('header', {
     fetchLinks: pageSlugFetchLinks,
     ref,
   })

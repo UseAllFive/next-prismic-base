@@ -1,4 +1,4 @@
-import { api } from 'lib/api'
+import { api } from 'lib/prismic'
 
 export const homeID = api.HOME_ID
 

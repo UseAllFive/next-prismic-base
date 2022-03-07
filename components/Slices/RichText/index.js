@@ -1,11 +1,11 @@
 import styles from './index.module.scss'
 import prismicRichTextShape from 'shapes/prismic/richtext'
-import RichTextField from 'components/Pieces/RichTextField'
+import PrismicRichText from 'components/Pieces/PrismicRichText'
 
 const RichTextComponent = ({ richtext }) => {
   return (
     <div className={styles.container}>
-      <RichTextField text={richtext} />
+      <PrismicRichText text={richtext} />
     </div>
   )
 }
