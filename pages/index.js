@@ -6,7 +6,7 @@ import { pageSlugFetchLinks } from 'constants/page'
 export default Page
 
 export async function getStaticProps({ preview = false, previewData }) {
-  const { masterRef } = await PrismicClient.getApi()
+  const masterRef = await PrismicClient.getMasterRef()
   const ref = previewData?.ref || masterRef.ref
   const HOME_ID = api.HOME_ID
   const { data: header } = await PrismicClient.getSingle('header', {
