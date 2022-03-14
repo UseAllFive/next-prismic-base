@@ -13,7 +13,10 @@ export async function getStaticProps({ preview = false, previewData }) {
     fetchLinks: pageSlugFetchLinks,
     ref,
   })
-  const page = await client.getByID(HOME_ID, { ref })
+  const page = await client.getByID(HOME_ID, {
+    ref,
+    fetchLinks: pageSlugFetchLinks,
+  })
 
   return {
     props: {
