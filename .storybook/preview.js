@@ -2,6 +2,7 @@
 import 'normalize.css'
 import '../styles/fonts.css'
 import '../styles/global.scss'
+import { RouterContext } from 'next/dist/shared/lib/router-context' // next 12
 
 export const parameters = {
   layout: 'fullscreen',
