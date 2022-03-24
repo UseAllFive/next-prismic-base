@@ -3,9 +3,6 @@ import 'normalize.css'
 import '../styles/fonts.css'
 import '../styles/global.scss'
 
-import { RouterContext } from 'next/dist/shared/lib/router-context' // next 12
-import * as nextImage from 'next/image'
-
 export const parameters = {
   layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -49,42 +46,3 @@ export const parameters = {
     push() {},
   },
 }
-
-// Replace next/image for Storybook
-Object.defineProperty(nextImage, 'default', {
-  configurable: true,
-  value: (props) => {
-    const { width, height, layout, objectFit, ...imgProps } = props
-    const ratio = (height / width) * 100
-
-    return (
-      <div
-        style={{
-          maxWidth: layout !== 'fill' && width,
-          display: 'inline-block',
-          width: '100%',
-        }}>
-        <div
-          style={{
-            paddingBottom: layout !== 'fill' && `${ratio}%`,
-            position: layout !== 'fill' ? 'relative' : 'absolute',
-            overflow: layout === 'fill' && 'hidden',
-            inset: layout === 'fill' && 0,
-          }}>
-          <img
-            data-chromatic="ignore" // ignore images in Chromatic since placekittens are random
-            style={{
-              objectFit: 'cover',
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              left: 0,
-              top: 0,
-            }}
-            {...imgProps}
-          />
-        </div>
-      </div>
-    )
-  },
-})

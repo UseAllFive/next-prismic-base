@@ -7,6 +7,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
+    'storybook-addon-next',
     // Handle SCSS modules
     {
       name: '@storybook/preset-scss',
