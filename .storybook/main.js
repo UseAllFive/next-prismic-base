@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   // Point at your stories
   stories: ['../components/**/*.stories.js'],
@@ -8,7 +6,6 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     'storybook-addon-next',
-    // Handle SCSS modules
   ],
   core: {
     builder: 'webpack5',
