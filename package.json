@@ -59,7 +59,7 @@
     "sass-loader": "^10.1.1",
     "storybook-addon-next": "^1.6.2",
     "storybook-addon-next-router": "^3.1.1",
-    "style-loader": "^2.0.0",
+    "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-sass-guidelines": "^7.1.0",
     "stylelint-config-standard": "^22.0.0",
