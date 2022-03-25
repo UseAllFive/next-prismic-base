@@ -12,7 +12,7 @@
     "lint:js": "eslint components/** pages/** lib/** shapes/**",
     "lint:scss": "npx stylelint '**/*.scss'",
     "lint": "yarn lint:js && yarn lint:scss",
-    "storybook": "start-storybook -p 6006 -s ./public",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=${MY_TOKEN} --skip 'dependabot/**'"
   },
@@ -41,6 +41,8 @@
     "@storybook/addon-actions": "^6.2.8",
     "@storybook/addon-essentials": "^6.2.1",
     "@storybook/addon-links": "^6.1.21",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.2.8",
     "@svgr/webpack": "^5.5.0",
@@ -55,10 +57,12 @@
     "file-loader": "^6.2.0",
     "husky": "^4.3.8",
     "sass-loader": "^10.1.1",
+    "storybook-addon-next": "^1.6.2",
     "storybook-addon-next-router": "^3.1.1",
     "style-loader": "^2.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-sass-guidelines": "^7.1.0",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-standard": "^22.0.0",
+    "webpack": "5"
   }
 }
