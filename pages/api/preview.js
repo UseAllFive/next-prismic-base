@@ -4,6 +4,9 @@ import { linkResolver } from '../../lib/resolvers'
 export default async function preview(req, res) {
   const { token: ref, documentId } = req.query
 
+  // This will enable the client to automatically read the token and documentId URL parameters
+  client.enableAutoPreviewsFromReq(req)
+
   // Check the token parameter against the Prismic SDK
   const url = await client.resolvePreviewURL({
     linkResolver,
