@@ -18,13 +18,13 @@ export function getMetaData(doc) {
       // TODO remove this and add in your own template override options
       metadata.meta_title = meta_title || doc.data.post_title
       metadata.meta_description = meta_description || doc.data.post_description
-      metadata.meta_image = meta_image?.url || doc.data.post_image
+      metadata.meta_image = meta_image || doc.data.post_image
 
       break
     default:
       metadata.meta_title = meta_title
       metadata.meta_description = meta_description
-      metadata.meta_image = meta_image?.url
+      metadata.meta_image = meta_image
 
       break
   }
