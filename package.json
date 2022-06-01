@@ -47,7 +47,7 @@
     "@storybook/react": "^6.2.8",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
-    "chromatic": "^5.8.0",
+    "chromatic": "^6.5.6",
     "css-loader": "^5.2.0",
     "eslint": "^7.29.0",
     "eslint-config-next": "^11.0.0",
