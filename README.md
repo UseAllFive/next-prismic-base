@@ -5,6 +5,16 @@
 
 # YOUR_PROJECTS_NAME_HERE
 
+## About the project
+
+**Full name:** Not Just The Acronym
+
+**Current/old website:** www.example.com
+
+**Description:** A little description about the client/project
+
+**Designs:** www.figma.com/abc
+
 ## What you need to know
 
 It's highly suggested that you read through the Next and Prismic documentation below before starting
