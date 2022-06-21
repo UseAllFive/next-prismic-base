@@ -6,6 +6,7 @@ import Meta from '../Meta'
 import { motion } from 'framer-motion'
 import headerShape from 'components/Layout/Header/shape'
 import metaShape from 'components/Layout/Meta/shape'
+import SkipToMain from 'components/Layout/SkipToMain'
 
 const Layout = ({ metadata, header, preview, children }) => {
   return (
@@ -13,13 +14,16 @@ const Layout = ({ metadata, header, preview, children }) => {
       {/* TODO create defaults in Prismic singleton */}
       <Meta metadata={metadata} defaults={null} />
       {preview && <PreviewBar />}
+      <SkipToMain />
       <Header header={header} />
       {/* TODO: customize your transition animation */}
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}>
-        <main>{children}</main>
+        <main id="root" role="main">
+          {children}
+        </main>
       </motion.div>
       <Footer />
     </>
