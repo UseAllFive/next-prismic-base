@@ -1,8 +1,3 @@
-![](https://img.shields.io/badge/node-12.19.1-43853d?logo=node.js&labelColor=fff)
-![](https://img.shields.io/badge/next-11-black?logo=next.js)
-![](https://img.shields.io/badge/prismic-cms-fff?logo=prismic&labelColor=5163ba&logoColor=fff)
-![](https://img.shields.io/badge/storybook-fff?logo=storybook&labelColor=ff4785&logoColor=fff)
-
 # YOUR_PROJECTS_NAME_HERE
 
 ## About the project
@@ -29,14 +24,6 @@ UA5 has also put together a [playlist of videos](https://www.youtube.com/playlis
 If you have not yet connected this codebase to Prismic [carefully read through the instructions here](https://github.com/UseAllFive/next-prismic-base/wiki). Otherwise, you can probably skip those instructions and simply read the following to get the project up and running locally:
 
 ## Configuration
-
-### Disable dependabot
-
-Unless you want to be bugged monthly about dependency updates, we recommend that you remove /.github/dependabot.yaml to prevent GitHub from checking for dependencies updates. You can manually trigger updates by running:
-
-```
-yarn upgrade --latest
-```
 
 ### Set up environment variables
 
