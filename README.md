@@ -10,6 +10,8 @@
 
 **Designs:** www.figma.com/abc
 
+**Sitemap:** www.figma.com/file/4nN9qgqFVHYqlabovASf8E/Sitemap-Template (< to duplicate + adjust for current project)
+
 ## What you need to know
 
 It's highly suggested that you read through the Next and Prismic documentation below before starting
