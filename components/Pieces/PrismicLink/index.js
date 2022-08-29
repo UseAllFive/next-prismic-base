@@ -24,7 +24,7 @@ const Link = ({
 
   // Determine if link matches current route
   const { asPath } = useRouter()
-  if (asPath) {
+  if (asPath && href) {
     const i = asPath.indexOf('?')
     const path = i > 0 ? `${asPath.substring(0, i)}/` : `${asPath}/`
     const LEADING_AND_TRAILING_SLASH_REGEX = /^\/|\/$/g
