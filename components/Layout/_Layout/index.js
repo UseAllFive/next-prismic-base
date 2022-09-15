@@ -3,7 +3,6 @@ import PreviewBar from '../PreviewBar'
 import Footer from '../Footer'
 import Header from '../Header'
 import Meta from '../Meta'
-import { motion } from 'framer-motion'
 import headerShape from 'components/Layout/Header/shape'
 import metaShape from 'components/Layout/Meta/shape'
 import SkipToMain from 'components/Layout/SkipToMain'
@@ -16,15 +15,9 @@ const Layout = ({ metadata, header, preview, children }) => {
       {preview && <PreviewBar />}
       <SkipToMain />
       <Header header={header} />
-      {/* TODO: customize your transition animation */}
-      <motion.div
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}>
-        <main id="root" role="main">
-          {children}
-        </main>
-      </motion.div>
+      <main id="root" role="main">
+        {children}
+      </main>
       <Footer />
     </>
   )

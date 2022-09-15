@@ -4,7 +4,6 @@ import '../styles/fonts.css'
 import '../styles/global.scss'
 import PropTypes from 'prop-types'
 import NProgress from 'nprogress'
-import { AnimatePresence } from 'framer-motion'
 import * as analytics from 'lib/analytics'
 import { useEffect } from 'react'
 
@@ -29,12 +28,7 @@ function MyApp({ Component, pageProps, router }) {
     }
   }, [router])
 
-  return (
-    // to remove page transitions, remove AnimatePresence wrapper and motion.div in Layout component
-    <AnimatePresence exitBeforeEnter>
-      <Component {...pageProps} key={router.asPath} />
-    </AnimatePresence>
-  )
+  return <Component {...pageProps} key={router.asPath} />
 }
 
 MyApp.propTypes = {
