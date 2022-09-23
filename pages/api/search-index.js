@@ -1,4 +1,4 @@
-import { client, api } from 'lib/prismic'
+import { client } from 'lib/prismic'
 import { pageSlugFetchLinks } from 'constants/page'
 import { linkResolver } from 'lib/resolvers'
 import * as prismic from '@prismicio/client'
