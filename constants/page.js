@@ -7,6 +7,7 @@ export const pageSlugFetchLinks = [
   'page.handle_override',
   'page.title',
   'page.parent_pages',
+  'category.title',
 ]
 
 // TODO continue to add in fetch links as needed for slices and page content here
