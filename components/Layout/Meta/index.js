@@ -48,6 +48,8 @@ const Meta = ({ metadata, defaults }) => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={metaDefaults.TWITTER_HANDLE} />
       <meta name="twitter:title" content={title} />
